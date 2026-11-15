@@ -13,7 +13,7 @@ const PORTFOLIO = {
     "I build engaging 2D & 3D games, real-time multiplayer card & casino games, AR experiences and interactive simulations with Unity and C#, from toddler learning games to industrial digital twins.",
   location: "Pune, India",
   email: "sachinkorde1993@gmail.com",
-  resumeFile: "assets/Sachin_Korde_Resume.pdf?v=3",
+  resumeFile: "assets/Sachin_Korde_Resume.pdf?v=4",
 
   socials: [
     { label: "LinkedIn", url: "https://www.linkedin.com/in/sachinkorde/" },
