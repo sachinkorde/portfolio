@@ -36,28 +36,6 @@ const PORTFOLIO = {
   // Add links like:  link: "https://play.google.com/...",  repo: "https://github.com/..."
   projects: [
     {
-      title: "The Real Bingo",
-      company: "Freelance",
-      org: "Freelance",
-      description:
-        "A live real-time number game with a new round every 60 seconds. Rounds run on the server clock, so timing and results always come from the server, and outcomes are provably fair using a SHA-256 commit-reveal scheme. Includes a wallet with a full transaction ledger, referrals and KYC-verified withdrawals.",
-      tags: ["Real-time", "Provably Fair", "Android", "Backend"],
-      image: "assets/real-bingo-logo.svg",
-      link: "https://bingo-backend-bjqq.onrender.com/",
-      linkLabel: "Website",
-      repo: "",
-    },
-    {
-      title: "Rummy & Multiplayer Card Games",
-      company: "Freelance",
-      org: "Freelance",
-      description:
-        "Real-time multiplayer card games for freelance clients, including Rummy and other casino-style card games, with live matchmaking, turn-based game flow and server-synced game state.",
-      tags: ["Unity", "C#", "Multiplayer", "Sockets"],
-      link: "",
-      repo: "",
-    },
-    {
       title: "Digital Pressure Testing (DPT)",
       company: "Aquila",
       org: "Aquila Digital Energy Solutions",
@@ -230,18 +208,31 @@ const PORTFOLIO = {
       link: "",
       repo: "",
     },
+    {
+      title: "The Real Bingo",
+      company: "Freelance",
+      org: "Freelance",
+      description:
+        "A live real-time number game with a new round every 60 seconds. Rounds run on the server clock, so timing and results always come from the server, and outcomes are provably fair using a SHA-256 commit-reveal scheme. Includes a wallet with a full transaction ledger, referrals and KYC-verified withdrawals.",
+      tags: ["Real-time", "Provably Fair", "Android", "Backend"],
+      image: "assets/real-bingo-logo.svg",
+      link: "https://bingo-backend-bjqq.onrender.com/",
+      linkLabel: "Website",
+      repo: "",
+    },
+    {
+      title: "Rummy & Multiplayer Card Games",
+      company: "Freelance",
+      org: "Freelance",
+      description:
+        "Real-time multiplayer card games for freelance clients, including Rummy and other casino-style card games, with live matchmaking, turn-based game flow and server-synced game state.",
+      tags: ["Unity", "C#", "Multiplayer", "Sockets"],
+      link: "",
+      repo: "",
+    },
   ],
 
   experience: [
-    {
-      title: "Freelance Game Developer",
-      org: "Independent",
-      period: "Freelance", // TODO: add years, e.g. "2023 — Present"
-      points: [
-        "Build real-time games for clients, including multiplayer Rummy and card games, a live Bingo number game and casino games.",
-        "Worked on The Real Bingo, a live 60-second-round number game with server-synced rounds and provably fair results.",
-      ],
-    },
     {
       title: "Unity 3D Developer",
       org: "Aquila Digital Energy Solutions Pvt Ltd",
@@ -301,6 +292,15 @@ const PORTFOLIO = {
         "Started my career building many client websites with WordPress, HTML, CSS, JavaScript and jQuery, plus PHP / CodeIgniter backends.",
         "Moved into Unity development on the company's AR/VR products: Magic Joey (AR learning cards for kids), a Human Anatomy AR app and an industrial VR project.",
         "Worked directly with clients to gather requirements and deliver tailored features.",
+      ],
+    },
+    {
+      title: "Freelance Game Developer",
+      org: "Independent",
+      period: "Freelance", // TODO: add years, e.g. "2023 — Present"
+      points: [
+        "Build real-time games for clients, including multiplayer Rummy and card games, a live Bingo number game and casino games.",
+        "Worked on The Real Bingo, a live 60-second-round number game with server-synced rounds and provably fair results.",
       ],
     },
     {
