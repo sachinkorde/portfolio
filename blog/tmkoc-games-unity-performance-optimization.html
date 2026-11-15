@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Unity Game Optimization Case Study: TMKOC Games | Sachin Korde, Pune</title>
+  <meta name="description" content="How I removed lag, smoothed animations and updated 3D models in official TMKOC mobile games built with Unity: Run Jetha Run, Match &amp; Merge: TMKOC Puzzle and Hungry Goli." />
+  <meta name="keywords" content="Unity game optimization, Run Jetha Run, TMKOC game, Hungry Goli, Match and Merge TMKOC, mobile game performance Unity, Unity developer Pune" />
+  <meta name="author" content="Sachin Korde" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="geo.region" content="IN-MH" />
+  <meta name="geo.placename" content="Pune" />
+  <link rel="canonical" href="https://sachinkorde.github.io/portfolio/blog/tmkoc-games-unity-performance-optimization.html" />
+  <meta name="theme-color" content="#070a14" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Sachin Korde — Unity Game Developer" />
+  <meta property="og:title" content="Unity Game Optimization Case Study: TMKOC Games | Sachin Korde, Pune" />
+  <meta property="og:description" content="How I removed lag, smoothed animations and updated 3D models in official TMKOC mobile games built with Unity: Run Jetha Run, Match &amp; Merge: TMKOC Puzzle and Hungry Goli." />
+  <meta property="og:url" content="https://sachinkorde.github.io/portfolio/blog/tmkoc-games-unity-performance-optimization.html" />
+  <meta property="og:image" content="https://play-lh.googleusercontent.com/CaFU42VXHbxvxrNedzz7CBS-GvoNs7NV6l41ZQWGlGBZjJzCnVdGNhUTJeIBoCqU4FB0TvSOHWsd2txLqTWkHg=s512" />
+  <meta property="og:locale" content="en_IN" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Unity Game Optimization Case Study: TMKOC Games | Sachin Korde, Pune" />
+  <meta name="twitter:description" content="How I removed lag, smoothed animations and updated 3D models in official TMKOC mobile games built with Unity: Run Jetha Run, Match &amp; Merge: TMKOC Puzzle and Hungry Goli." />
+  <meta name="twitter:image" content="https://play-lh.googleusercontent.com/CaFU42VXHbxvxrNedzz7CBS-GvoNs7NV6l41ZQWGlGBZjJzCnVdGNhUTJeIBoCqU4FB0TvSOHWsd2txLqTWkHg=s512" />
+  <meta property="article:published_time" content="2026-11-15" />
+  <meta property="article:author" content="https://sachinkorde.github.io/portfolio/" />
+  <meta property="article:tag" content="Unity 3D" />
+  <meta property="article:tag" content="C#" />
+  <meta property="article:tag" content="Optimization" />
+  <meta property="article:tag" content="Animation" />
+  <meta property="article:tag" content="Mobile" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/blog.css?v=1" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","headline":"Optimizing TMKOC Mobile Games in Unity: Run Jetha Run, Match & Merge and Hungry Goli","description":"How I removed lag, smoothed animations and updated 3D models in official TMKOC mobile games built with Unity: Run Jetha Run, Match & Merge: TMKOC Puzzle and Hungry Goli.","image":"https://play-lh.googleusercontent.com/CaFU42VXHbxvxrNedzz7CBS-GvoNs7NV6l41ZQWGlGBZjJzCnVdGNhUTJeIBoCqU4FB0TvSOHWsd2txLqTWkHg=s512","datePublished":"2026-11-15","dateModified":"2026-11-15","author":{"@type":"Person","@id":"https://sachinkorde.github.io/portfolio/#person","name":"Sachin Korde","url":"https://sachinkorde.github.io/portfolio/","jobTitle":"Unity 3D Game Developer","sameAs":["https://www.linkedin.com/in/sachinkorde/","https://github.com/sachinkorde"],"address":{"@type":"PostalAddress","addressLocality":"Pune","addressRegion":"Maharashtra","addressCountry":"IN"}},"publisher":{"@type":"Person","@id":"https://sachinkorde.github.io/portfolio/#person","name":"Sachin Korde","url":"https://sachinkorde.github.io/portfolio/","jobTitle":"Unity 3D Game Developer","sameAs":["https://www.linkedin.com/in/sachinkorde/","https://github.com/sachinkorde"],"address":{"@type":"PostalAddress","addressLocality":"Pune","addressRegion":"Maharashtra","addressCountry":"IN"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://sachinkorde.github.io/portfolio/blog/tmkoc-games-unity-performance-optimization.html"},"keywords":"Unity game optimization, Run Jetha Run, TMKOC game, Hungry Goli, Match and Merge TMKOC, mobile game performance Unity, Unity developer Pune","articleSection":"Case Studies","inLanguage":"en-IN","wordCount":290},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Portfolio","item":"https://sachinkorde.github.io/portfolio/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://sachinkorde.github.io/portfolio/blog/"},{"@type":"ListItem","position":3,"name":"Optimizing TMKOC Mobile Games in Unity: Run Jetha Run, Match & Merge and Hungry Goli","item":"https://sachinkorde.github.io/portfolio/blog/tmkoc-games-unity-performance-optimization.html"}]}]}</script>
+</head>
+<body>
+  <header class="b-nav">
+    <div class="b-wrap b-nav-in">
+      <a class="b-logo" href="../"><span class="b-mark">SK</span><span>Sachin.Korde</span></a>
+      <nav class="b-links">
+        <a href="../#levels">Projects</a>
+        <a href="../#arcade">Arcade</a>
+        <a href="./">Blog</a>
+        <a class="b-hire" href="../#contact">Hire Me</a>
+      </nav>
+    </div>
+  </header>
+  <main class="b-wrap b-post">
+    <nav class="b-crumbs mono" aria-label="Breadcrumb"><a href="../">Portfolio</a> / <a href="./">Blog</a> / <span>Case study</span></nav>
+    <article>
+      <header class="b-head">
+        <p class="b-kicker mono">CASE STUDY · Neela Mediatech / Neela Films · Jan 2024 – Jul 2024</p>
+        <h1>Optimizing TMKOC Mobile Games in Unity: Run Jetha Run, Match &amp; Merge and Hungry Goli</h1>
+        <p class="b-lead">How I removed lag, smoothed animations and updated 3D models in official TMKOC mobile games built with Unity: Run Jetha Run, Match &amp; Merge: TMKOC Puzzle and Hungry Goli.</p>
+        <div class="b-meta mono">
+          <span>By <a href="https://sachinkorde.github.io/portfolio/">Sachin Korde</a>, Unity Developer, Pune</span>
+          <span>2 min read</span>
+          <time datetime="2026-11-15">15 Nov 2026</time>
+        </div>
+        <div class="b-tags"><span>Unity 3D</span><span>C#</span><span>Optimization</span><span>Animation</span><span>Mobile</span></div>
+      </header>
+      <div class="b-grid">
+        <div class="b-body">
+      <p>Players forgive a lot, but they don't forgive a game that stutters. While working on official games for <strong>TMKOC (Taarak Mehta Ka Ooltah Chashmah)</strong>, India's No. 1 TV serial, a big part of my job was making existing games run and feel better on real phones.</p>
+      <h2 id="run-jetha-run-an-endless-runner-that-had-to-feel-smooth">Run Jetha Run: an endless runner that had to feel smooth</h2>
+      <p><strong>Run Jetha Run</strong> is a 3D endless runner starring Jethalal. In a runner, smoothness <em>is</em> the gameplay: if the frame rate drops at the wrong moment, the player crashes into an obstacle they should have dodged. My work on this game focused on three things:</p>
+      <ul><li><strong>Fixing lag</strong>: finding what made the game stutter and fixing it so gameplay stays smooth.</li><li><strong>Smoother animations</strong>: improving character and gameplay animations so movement feels fluid and responsive.</li><li><strong>3D models</strong>: working side by side with the 3D modeler to change existing models and create new ones for the game.</li></ul>
+      <h2 id="match-merge-tmkoc-puzzle">Match &amp; Merge: TMKOC Puzzle</h2>
+      <p>In a merge puzzle, every tile movement is an animation, and players make hundreds of moves in a session. I improved the animations and optimized the game so merges feel snappy and satisfying, even on lower-end devices.</p>
+      <h2 id="hungry-goli">Hungry Goli</h2>
+      <p><strong>Hungry Goli</strong> was close to release when I joined the work. I gave it its final polish and performance optimization so it could ship in good shape.</p>
+      <h2 id="what-i-learned">What I learned</h2>
+      <ul><li>Optimization is never one big fix. It's many small ones, checked on real devices.</li><li>Animation quality and performance go together: smooth animation needs a steady frame rate.</li><li>Working closely with artists early saves a lot of time later, because models built with the game's limits in mind need less rework.</li></ul>
+      <h2 id="tech-stack">Tech stack</h2>
+      <p>Unity 3D, C#, Unity animation tools, mobile performance tuning, collaboration with 3D artists.</p>
+      <div class="b-links-box"><strong>Links</strong><ul><li><a href="https://play.google.com/store/apps/details?id=com.tmkocplay.run.jetha.run" target="_blank" rel="noopener">Run Jetha Run on Google Play ↗</a></li><li><a href="https://play.google.com/store/apps/details?id=com.neelamediatech.tmkoc2048matchpool" target="_blank" rel="noopener">Match &amp; Merge: TMKOC Puzzle ↗</a></li><li><a href="https://play.google.com/store/apps/details?id=com.NeelaGames.HungryGoli" target="_blank" rel="noopener">Hungry Goli on Google Play ↗</a></li></ul></div>
+        </div>
+        <aside class="b-side">
+          <div class="b-card"><p class="mono b-side-t">ON THIS PAGE</p><ul class="b-toc"><li><a href="#run-jetha-run-an-endless-runner-that-had-to-feel-smooth">Run Jetha Run: an endless runner that had to feel smooth</a></li><li><a href="#match-merge-tmkoc-puzzle">Match &amp; Merge: TMKOC Puzzle</a></li><li><a href="#hungry-goli">Hungry Goli</a></li><li><a href="#what-i-learned">What I learned</a></li><li><a href="#tech-stack">Tech stack</a></li></ul></div>
+          <div class="b-card b-cta">
+            <p class="mono b-side-t">🟢 AVAILABLE FOR HIRE</p>
+            <p>Need a Unity developer for your game? Full-time, freelance or remote, based in Pune.</p>
+            <a class="b-btn" href="https://sachinkorde.github.io/portfolio/#contact">Hire Sachin</a>
+            <a class="b-btn ghost" href="https://sachinkorde.github.io/portfolio/assets/Sachin_Korde_Resume.pdf">Resume (PDF)</a>
+          </div>
+        </aside>
+      </div>
+    </article>
+
+    <section class="b-author">
+      <div class="b-avatar">SK</div>
+      <div>
+        <p class="mono b-side-t">ABOUT THE AUTHOR</p>
+        <p><strong>Sachin Korde</strong> is a Unity 3D game developer in Pune, India with 5+ years of experience in mobile games, AR/VR and real-time multiplayer. He has worked on official TMKOC games, Kiddopia, Cadaviz and Aquila's Digital Pressure Testing platform. <a href="https://sachinkorde.github.io/portfolio/">See the portfolio →</a></p>
+      </div>
+    </section>
+
+    <section class="b-related">
+      <h2>More case studies</h2>
+      <div class="b-cards">
+        <a class="b-pcard" href="kiddopia-k-man-flying-pathpuzzle-unity-2d-spine.html">
+          <span class="b-pimg"><img src="https://play-lh.googleusercontent.com/YpxTvsGH_q-7MEteIa7TtE-ETM0VpSd8lE0lntg5Aaz11fLRwnPzDV9IkPiY-_iozomGgWImI-xlI8_XNUq6UUE=s512" alt="" loading="lazy" referrerpolicy="no-referrer" /></span>
+          <span class="b-pbody">
+            <span class="mono b-pk">Kiddopia (Paper Boat Apps)</span>
+            <span class="b-pt">Building Kids Games for Kiddopia: K-Man Flying, PathPuzzle and More (Unity 2D + Spine)</span>
+            <span class="b-pd">How I built K-Man Flying from scratch with Spine animations, added PathPuzzle to Kiddopia's Puzzles section, and created learning games for toddlers in Unity 2D.</span>
+            <span class="mono b-pr">2 min read →</span>
+          </span>
+        </a>
+        <a class="b-pcard" href="digital-pressure-testing-unity-3d-oil-gas-digital-twin.html">
+          <span class="b-pimg"><img src="https://www.aquila-engineer.com/wp-content/uploads/2026/05/auto-line-up-1-scaled.jpeg" alt="" loading="lazy" referrerpolicy="no-referrer" /></span>
+          <span class="b-pbody">
+            <span class="mono b-pk">Aquila Digital Energy Solutions</span>
+            <span class="b-pt">Unity Beyond Games: 3D Digital Twins for Oil &amp; Gas Pressure Testing (DPT)</span>
+            <span class="b-pd">How I built exact 3D replicas of BOP stacks, choke manifolds and MPD equipment in Unity and Blender for Aquila's Digital Pressure Testing platform, tested against real-time pressure data.</span>
+            <span class="mono b-pr">2 min read →</span>
+          </span>
+        </a>
+        <a class="b-pcard" href="cadaviz-virtual-dissection-table-unity-developer.html">
+          <span class="b-pimg"><img src="https://immersivelabz.com/wp-content/uploads/2024/10/cadaviz.png" alt="" loading="lazy" referrerpolicy="no-referrer" /></span>
+          <span class="b-pbody">
+            <span class="mono b-pk">ImmersiveVision Technology</span>
+            <span class="b-pt">Joining a Large Unity Codebase: My Work on Cadaviz, a Virtual Dissection Table</span>
+            <span class="b-pd">How I got up to speed on the large Cadaviz Unity codebase on my own and designed a new section for the Male Full Body module with a clean, modular class structure.</span>
+            <span class="mono b-pr">2 min read →</span>
+          </span>
+        </a></div>
+    </section>
+  </main>
+  <footer class="b-foot">
+    <div class="b-wrap">
+      <p><strong>Sachin Korde</strong> · Unity Game Developer in Pune, Maharashtra, India · Available for full-time &amp; freelance work</p>
+      <p><a href="https://sachinkorde.github.io/portfolio/">Portfolio</a> · <a href="./">Blog</a> · <a href="https://sachinkorde.github.io/portfolio/#arcade">Play 10 mini-games</a> · <a href="https://www.linkedin.com/in/sachinkorde/" target="_blank" rel="noopener">LinkedIn</a> · <a href="mailto:sachinkorde1993@gmail.com">Email</a></p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TMKOC Playschool Unity Case Study | Kids E-Learning App Developer Pune</title>
+  <meta name="description" content="How I built the TMKOC Playschool kids learning app from scratch in Unity: registration and OTP login, student dashboard, REST APIs, Addressables content downloads, localization and learning mini-games." />
+  <meta name="keywords" content="TMKOC Playschool, Unity e-learning app, kids learning app developer, Unity Addressables, Unity localization, Unity developer Pune, educational game developer India" />
+  <meta name="author" content="Sachin Korde" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="geo.region" content="IN-MH" />
+  <meta name="geo.placename" content="Pune" />
+  <link rel="canonical" href="https://sachinkorde.github.io/portfolio/blog/tmkoc-playschool-unity-kids-learning-app-case-study.html" />
+  <meta name="theme-color" content="#070a14" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Sachin Korde — Unity Game Developer" />
+  <meta property="og:title" content="TMKOC Playschool Unity Case Study | Kids E-Learning App Developer Pune" />
+  <meta property="og:description" content="How I built the TMKOC Playschool kids learning app from scratch in Unity: registration and OTP login, student dashboard, REST APIs, Addressables content downloads, localization and learning mini-games." />
+  <meta property="og:url" content="https://sachinkorde.github.io/portfolio/blog/tmkoc-playschool-unity-kids-learning-app-case-study.html" />
+  <meta property="og:image" content="https://play-lh.googleusercontent.com/CajKjdg47A8vXsTcdW5kgBCX90SGUQux5InYjiseWUJbhPKjUawjxmH04Ka3_e5FGAGqw4VV-Bei34GbTea0Hg=s512" />
+  <meta property="og:locale" content="en_IN" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="TMKOC Playschool Unity Case Study | Kids E-Learning App Developer Pune" />
+  <meta name="twitter:description" content="How I built the TMKOC Playschool kids learning app from scratch in Unity: registration and OTP login, student dashboard, REST APIs, Addressables content downloads, localization and learning mini-games." />
+  <meta name="twitter:image" content="https://play-lh.googleusercontent.com/CajKjdg47A8vXsTcdW5kgBCX90SGUQux5InYjiseWUJbhPKjUawjxmH04Ka3_e5FGAGqw4VV-Bei34GbTea0Hg=s512" />
+  <meta property="article:published_time" content="2026-11-15" />
+  <meta property="article:author" content="https://sachinkorde.github.io/portfolio/" />
+  <meta property="article:tag" content="Unity" />
+  <meta property="article:tag" content="C#" />
+  <meta property="article:tag" content="REST API" />
+  <meta property="article:tag" content="Addressables" />
+  <meta property="article:tag" content="Localization" />
+  <meta property="article:tag" content="E-learning" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/blog.css?v=1" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","headline":"Case Study: Building TMKOC Playschool, a Kids Learning App in Unity","description":"How I built the TMKOC Playschool kids learning app from scratch in Unity: registration and OTP login, student dashboard, REST APIs, Addressables content downloads, localization and learning mini-games.","image":"https://play-lh.googleusercontent.com/CajKjdg47A8vXsTcdW5kgBCX90SGUQux5InYjiseWUJbhPKjUawjxmH04Ka3_e5FGAGqw4VV-Bei34GbTea0Hg=s512","datePublished":"2026-11-15","dateModified":"2026-11-15","author":{"@type":"Person","@id":"https://sachinkorde.github.io/portfolio/#person","name":"Sachin Korde","url":"https://sachinkorde.github.io/portfolio/","jobTitle":"Unity 3D Game Developer","sameAs":["https://www.linkedin.com/in/sachinkorde/","https://github.com/sachinkorde"],"address":{"@type":"PostalAddress","addressLocality":"Pune","addressRegion":"Maharashtra","addressCountry":"IN"}},"publisher":{"@type":"Person","@id":"https://sachinkorde.github.io/portfolio/#person","name":"Sachin Korde","url":"https://sachinkorde.github.io/portfolio/","jobTitle":"Unity 3D Game Developer","sameAs":["https://www.linkedin.com/in/sachinkorde/","https://github.com/sachinkorde"],"address":{"@type":"PostalAddress","addressLocality":"Pune","addressRegion":"Maharashtra","addressCountry":"IN"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://sachinkorde.github.io/portfolio/blog/tmkoc-playschool-unity-kids-learning-app-case-study.html"},"keywords":"TMKOC Playschool, Unity e-learning app, kids learning app developer, Unity Addressables, Unity localization, Unity developer Pune, educational game developer India","articleSection":"Case Studies","inLanguage":"en-IN","wordCount":400},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Portfolio","item":"https://sachinkorde.github.io/portfolio/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://sachinkorde.github.io/portfolio/blog/"},{"@type":"ListItem","position":3,"name":"Case Study: Building TMKOC Playschool, a Kids Learning App in Unity","item":"https://sachinkorde.github.io/portfolio/blog/tmkoc-playschool-unity-kids-learning-app-case-study.html"}]}]}</script>
+</head>
+<body>
+  <header class="b-nav">
+    <div class="b-wrap b-nav-in">
+      <a class="b-logo" href="../"><span class="b-mark">SK</span><span>Sachin.Korde</span></a>
+      <nav class="b-links">
+        <a href="../#levels">Projects</a>
+        <a href="../#arcade">Arcade</a>
+        <a href="./">Blog</a>
+        <a class="b-hire" href="../#contact">Hire Me</a>
+      </nav>
+    </div>
+  </header>
+  <main class="b-wrap b-post">
+    <nav class="b-crumbs mono" aria-label="Breadcrumb"><a href="../">Portfolio</a> / <a href="./">Blog</a> / <span>Case study</span></nav>
+    <article>
+      <header class="b-head">
+        <p class="b-kicker mono">CASE STUDY · Neela Mediatech / Neela Films · Jan 2024 – Jul 2024</p>
+        <h1>Case Study: Building TMKOC Playschool, a Kids Learning App in Unity</h1>
+        <p class="b-lead">How I built the TMKOC Playschool kids learning app from scratch in Unity: registration and OTP login, student dashboard, REST APIs, Addressables content downloads, localization and learning mini-games.</p>
+        <div class="b-meta mono">
+          <span>By <a href="https://sachinkorde.github.io/portfolio/">Sachin Korde</a>, Unity Developer, Pune</span>
+          <span>2 min read</span>
+          <time datetime="2026-11-15">15 Nov 2026</time>
+        </div>
+        <div class="b-tags"><span>Unity</span><span>C#</span><span>REST API</span><span>Addressables</span><span>Localization</span><span>E-learning</span></div>
+      </header>
+      <div class="b-grid">
+        <div class="b-body">
+      <p><strong>Taarak Mehta Ka Ooltah Chashmah (TMKOC)</strong> is India's No. 1 TV serial, and its characters are loved by families across the country. At Neela Mediatech I worked on official TMKOC mobile games, and the biggest of them was <strong>TMKOC Playschool Kids Learning</strong>: an e-learning app that teaches young children through games featuring the characters they already know.</p>
+      <p>I built Playschool <strong>from scratch</strong> in Unity, from the very first screen to the finished app on Google Play.</p>
+      <h2 id="the-goal">The goal</h2>
+      <p>The app had to do two jobs at once. For children, it needed to feel like playing, not studying. For parents and teachers, it needed real structure: student accounts, progress tracking and reports they could rely on.</p>
+      <h2 id="what-i-built">What I built</h2>
+      <ul><li><strong>Registration and OTP authentication</strong>: a sign-up and login flow connected to the backend through REST APIs.</li><li><strong>Student dashboard</strong>: a home screen where each child's data is fetched from the server, displayed and updated.</li><li><strong>Addressables content downloads</strong>: learning content is downloaded from the server when it's needed, instead of being packed into the install.</li><li><strong>Localization</strong>: the app is built so its text can be shown in more than one language.</li><li><strong>Learning mini-games</strong>: I designed and built the <strong>Paint</strong>, <strong>ABCD Tracing</strong> and <strong>Puzzle</strong> games inside the app.</li><li><strong>Student progress reports</strong>: modules that turn play sessions into progress reports for parents and educators.</li></ul>
+      <h2 id="why-addressables-mattered">Why Addressables mattered</h2>
+      <p>A learning app keeps growing: new letters, new activities, new characters. If every piece of content ships inside the app, the download keeps getting bigger and every content change means a new store release. With <strong>Unity Addressables</strong>, content lives on the server and is loaded on demand. That keeps the first download smaller and lets the team add learning content without forcing every family to update the app.</p>
+      <h2 id="designing-games-for-small-hands">Designing games for small hands</h2>
+      <p>Games like ABCD Tracing and Paint are aimed at very young children, so the interaction has to be forgiving and the feedback has to be instant and joyful. A child tracing a letter should feel rewarded the moment they get it right. Building these mini-games taught me a lot about input handling, touch feedback and animation timing for an audience that can't read instructions yet.</p>
+      <h2 id="tech-stack">Tech stack</h2>
+      <p>Unity, C#, REST APIs, OTP authentication, Unity Addressables, Unity Localization, Android.</p>
+      <h2 id="result">Result</h2>
+      <p>TMKOC Playschool is live on Google Play. The same student-tracking features were also mirrored in a JavaScript web portal so the learning experience stays consistent across platforms.</p>
+      <div class="b-links-box"><strong>Links</strong><ul><li><a href="https://play.google.com/store/apps/details?id=com.neelamediatech.playschool" target="_blank" rel="noopener">TMKOC Playschool on Google Play ↗</a></li></ul></div>
+        </div>
+        <aside class="b-side">
+          <div class="b-card"><p class="mono b-side-t">ON THIS PAGE</p><ul class="b-toc"><li><a href="#the-goal">The goal</a></li><li><a href="#what-i-built">What I built</a></li><li><a href="#why-addressables-mattered">Why Addressables mattered</a></li><li><a href="#designing-games-for-small-hands">Designing games for small hands</a></li><li><a href="#tech-stack">Tech stack</a></li><li><a href="#result">Result</a></li></ul></div>
+          <div class="b-card b-cta">
+            <p class="mono b-side-t">🟢 AVAILABLE FOR HIRE</p>
+            <p>Need a Unity developer for your game? Full-time, freelance or remote, based in Pune.</p>
+            <a class="b-btn" href="https://sachinkorde.github.io/portfolio/#contact">Hire Sachin</a>
+            <a class="b-btn ghost" href="https://sachinkorde.github.io/portfolio/assets/Sachin_Korde_Resume.pdf">Resume (PDF)</a>
+          </div>
+        </aside>
+      </div>
+    </article>
+
+    <section class="b-author">
+      <div class="b-avatar">SK</div>
+      <div>
+        <p class="mono b-side-t">ABOUT THE AUTHOR</p>
+        <p><strong>Sachin Korde</strong> is a Unity 3D game developer in Pune, India with 5+ years of experience in mobile games, AR/VR and real-time multiplayer. He has worked on official TMKOC games, Kiddopia, Cadaviz and Aquila's Digital Pressure Testing platform. <a href="https://sachinkorde.github.io/portfolio/">See the portfolio →</a></p>
+      </div>
+    </section>
+
+    <section class="b-related">
+      <h2>More case studies</h2>
+      <div class="b-cards">
+        <a class="b-pcard" href="tmkoc-games-unity-performance-optimization.html">
+          <span class="b-pimg"><img src="https://play-lh.googleusercontent.com/CaFU42VXHbxvxrNedzz7CBS-GvoNs7NV6l41ZQWGlGBZjJzCnVdGNhUTJeIBoCqU4FB0TvSOHWsd2txLqTWkHg=s512" alt="" loading="lazy" referrerpolicy="no-referrer" /></span>
+          <span class="b-pbody">
+            <span class="mono b-pk">Neela Mediatech / Neela Films</span>
+            <span class="b-pt">Optimizing TMKOC Mobile Games in Unity: Run Jetha Run, Match &amp; Merge and Hungry Goli</span>
+            <span class="b-pd">How I removed lag, smoothed animations and updated 3D models in official TMKOC mobile games built with Unity: Run Jetha Run, Match &amp; Merge: TMKOC Puzzle and Hungry Goli.</span>
+            <span class="mono b-pr">2 min read →</span>
+          </span>
+        </a>
+        <a class="b-pcard" href="kiddopia-k-man-flying-pathpuzzle-unity-2d-spine.html">
+          <span class="b-pimg"><img src="https://play-lh.googleusercontent.com/YpxTvsGH_q-7MEteIa7TtE-ETM0VpSd8lE0lntg5Aaz11fLRwnPzDV9IkPiY-_iozomGgWImI-xlI8_XNUq6UUE=s512" alt="" loading="lazy" referrerpolicy="no-referrer" /></span>
+          <span class="b-pbody">
+            <span class="mono b-pk">Kiddopia (Paper Boat Apps)</span>
+            <span class="b-pt">Building Kids Games for Kiddopia: K-Man Flying, PathPuzzle and More (Unity 2D + Spine)</span>
+            <span class="b-pd">How I built K-Man Flying from scratch with Spine animations, added PathPuzzle to Kiddopia's Puzzles section, and created learning games for toddlers in Unity 2D.</span>
+            <span class="mono b-pr">2 min read →</span>
+          </span>
+        </a>
+        <a class="b-pcard" href="digital-pressure-testing-unity-3d-oil-gas-digital-twin.html">
+          <span class="b-pimg"><img src="https://www.aquila-engineer.com/wp-content/uploads/2026/05/auto-line-up-1-scaled.jpeg" alt="" loading="lazy" referrerpolicy="no-referrer" /></span>
+          <span class="b-pbody">
+            <span class="mono b-pk">Aquila Digital Energy Solutions</span>
+            <span class="b-pt">Unity Beyond Games: 3D Digital Twins for Oil &amp; Gas Pressure Testing (DPT)</span>
+            <span class="b-pd">How I built exact 3D replicas of BOP stacks, choke manifolds and MPD equipment in Unity and Blender for Aquila's Digital Pressure Testing platform, tested against real-time pressure data.</span>
+            <span class="mono b-pr">2 min read →</span>
+          </span>
+        </a></div>
+    </section>
+  </main>
+  <footer class="b-foot">
+    <div class="b-wrap">
+      <p><strong>Sachin Korde</strong> · Unity Game Developer in Pune, Maharashtra, India · Available for full-time &amp; freelance work</p>
+      <p><a href="https://sachinkorde.github.io/portfolio/">Portfolio</a> · <a href="./">Blog</a> · <a href="https://sachinkorde.github.io/portfolio/#arcade">Play 10 mini-games</a> · <a href="https://www.linkedin.com/in/sachinkorde/" target="_blank" rel="noopener">LinkedIn</a> · <a href="mailto:sachinkorde1993@gmail.com">Email</a></p>
+    </div>
+  </footer>
+</body>
+</html>

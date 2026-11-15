@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Unity 3D Industrial Simulation Case Study: Digital Pressure Testing | Sachin Korde</title>
+  <meta name="description" content="How I built exact 3D replicas of BOP stacks, choke manifolds and MPD equipment in Unity and Blender for Aquila's Digital Pressure Testing platform, tested against real-time pressure data." />
+  <meta name="keywords" content="Unity industrial simulation, Unity digital twin, BOP 3D model, choke manifold, oil and gas software Unity, Blender 3D modeling, real-time 3D developer India" />
+  <meta name="author" content="Sachin Korde" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="geo.region" content="IN-MH" />
+  <meta name="geo.placename" content="Pune" />
+  <link rel="canonical" href="https://sachinkorde.github.io/portfolio/blog/digital-pressure-testing-unity-3d-oil-gas-digital-twin.html" />
+  <meta name="theme-color" content="#070a14" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Sachin Korde — Unity Game Developer" />
+  <meta property="og:title" content="Unity 3D Industrial Simulation Case Study: Digital Pressure Testing | Sachin Korde" />
+  <meta property="og:description" content="How I built exact 3D replicas of BOP stacks, choke manifolds and MPD equipment in Unity and Blender for Aquila's Digital Pressure Testing platform, tested against real-time pressure data." />
+  <meta property="og:url" content="https://sachinkorde.github.io/portfolio/blog/digital-pressure-testing-unity-3d-oil-gas-digital-twin.html" />
+  <meta property="og:image" content="https://www.aquila-engineer.com/wp-content/uploads/2026/05/auto-line-up-1-scaled.jpeg" />
+  <meta property="og:locale" content="en_IN" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Unity 3D Industrial Simulation Case Study: Digital Pressure Testing | Sachin Korde" />
+  <meta name="twitter:description" content="How I built exact 3D replicas of BOP stacks, choke manifolds and MPD equipment in Unity and Blender for Aquila's Digital Pressure Testing platform, tested against real-time pressure data." />
+  <meta name="twitter:image" content="https://www.aquila-engineer.com/wp-content/uploads/2026/05/auto-line-up-1-scaled.jpeg" />
+  <meta property="article:published_time" content="2026-11-15" />
+  <meta property="article:author" content="https://sachinkorde.github.io/portfolio/" />
+  <meta property="article:tag" content="Unity 3D" />
+  <meta property="article:tag" content="C#" />
+  <meta property="article:tag" content="Blender" />
+  <meta property="article:tag" content="Real-time Data" />
+  <meta property="article:tag" content="ReactJS" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/blog.css?v=1" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","headline":"Unity Beyond Games: 3D Digital Twins for Oil & Gas Pressure Testing (DPT)","description":"How I built exact 3D replicas of BOP stacks, choke manifolds and MPD equipment in Unity and Blender for Aquila's Digital Pressure Testing platform, tested against real-time pressure data.","image":"https://www.aquila-engineer.com/wp-content/uploads/2026/05/auto-line-up-1-scaled.jpeg","datePublished":"2026-11-15","dateModified":"2026-11-15","author":{"@type":"Person","@id":"https://sachinkorde.github.io/portfolio/#person","name":"Sachin Korde","url":"https://sachinkorde.github.io/portfolio/","jobTitle":"Unity 3D Game Developer","sameAs":["https://www.linkedin.com/in/sachinkorde/","https://github.com/sachinkorde"],"address":{"@type":"PostalAddress","addressLocality":"Pune","addressRegion":"Maharashtra","addressCountry":"IN"}},"publisher":{"@type":"Person","@id":"https://sachinkorde.github.io/portfolio/#person","name":"Sachin Korde","url":"https://sachinkorde.github.io/portfolio/","jobTitle":"Unity 3D Game Developer","sameAs":["https://www.linkedin.com/in/sachinkorde/","https://github.com/sachinkorde"],"address":{"@type":"PostalAddress","addressLocality":"Pune","addressRegion":"Maharashtra","addressCountry":"IN"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://sachinkorde.github.io/portfolio/blog/digital-pressure-testing-unity-3d-oil-gas-digital-twin.html"},"keywords":"Unity industrial simulation, Unity digital twin, BOP 3D model, choke manifold, oil and gas software Unity, Blender 3D modeling, real-time 3D developer India","articleSection":"Case Studies","inLanguage":"en-IN","wordCount":294},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Portfolio","item":"https://sachinkorde.github.io/portfolio/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://sachinkorde.github.io/portfolio/blog/"},{"@type":"ListItem","position":3,"name":"Unity Beyond Games: 3D Digital Twins for Oil & Gas Pressure Testing (DPT)","item":"https://sachinkorde.github.io/portfolio/blog/digital-pressure-testing-unity-3d-oil-gas-digital-twin.html"}]}]}</script>
+</head>
+<body>
+  <header class="b-nav">
+    <div class="b-wrap b-nav-in">
+      <a class="b-logo" href="../"><span class="b-mark">SK</span><span>Sachin.Korde</span></a>
+      <nav class="b-links">
+        <a href="../#levels">Projects</a>
+        <a href="../#arcade">Arcade</a>
+        <a href="./">Blog</a>
+        <a class="b-hire" href="../#contact">Hire Me</a>
+      </nav>
+    </div>
+  </header>
+  <main class="b-wrap b-post">
+    <nav class="b-crumbs mono" aria-label="Breadcrumb"><a href="../">Portfolio</a> / <a href="./">Blog</a> / <span>Case study</span></nav>
+    <article>
+      <header class="b-head">
+        <p class="b-kicker mono">CASE STUDY · Aquila Digital Energy Solutions · Feb 2025 – Apr 2026</p>
+        <h1>Unity Beyond Games: 3D Digital Twins for Oil &amp; Gas Pressure Testing (DPT)</h1>
+        <p class="b-lead">How I built exact 3D replicas of BOP stacks, choke manifolds and MPD equipment in Unity and Blender for Aquila's Digital Pressure Testing platform, tested against real-time pressure data.</p>
+        <div class="b-meta mono">
+          <span>By <a href="https://sachinkorde.github.io/portfolio/">Sachin Korde</a>, Unity Developer, Pune</span>
+          <span>2 min read</span>
+          <time datetime="2026-11-15">15 Nov 2026</time>
+        </div>
+        <div class="b-tags"><span>Unity 3D</span><span>C#</span><span>Blender</span><span>Real-time Data</span><span>ReactJS</span></div>
+      </header>
+      <div class="b-grid">
+        <div class="b-body">
+      <p>Unity isn't only for games. At <strong>Aquila Digital Energy Solutions</strong> I worked on <strong>Digital Pressure Testing (DPT)</strong>, a Unity-based platform that validates drilling-rig pressure tests in real time against the <strong>API STD 53</strong> standard.</p>
+      <h2 id="the-domain-in-one-minute">The domain in one minute</h2>
+      <ul><li><strong>BOP (Blowout Preventer)</strong>: a large stack of valves on top of a well that can seal it in an emergency. Every valve must be pressure-tested.</li><li><strong>Choke Manifold</strong>: pipes and adjustable valves used to control pressure from the well.</li><li><strong>MPD (Managed Pressure Drilling)</strong>: a drilling method that controls well pressure very precisely.</li><li><strong>Casing</strong>: the steel pipe cemented into the well; casing pressure tests prove it holds pressure without leaking.</li></ul>
+      <h2 id="my-role">My role</h2>
+      <p>Every client rig is different. Whenever the company received a client's Choke Manifold, BOP or MPD structure, I turned it into an <strong>exact, interactive 3D replica</strong> inside the product.</p>
+      <ul><li><strong>From schematic to 3D</strong>: I converted engineering schematics into accurate 3D equipment in Unity.</li><li><strong>Blender modeling</strong>: when a 3D model was missing, I built it myself in Blender.</li><li><strong>Real-time data testing</strong>: I tested each new configuration against real-time pressure data before it was released to the client.</li><li><strong>New features</strong>: I added a <strong>Casing</strong> test workflow and <strong>automated PDF report generation</strong>.</li><li><strong>Web parity</strong>: I kept matching features in sync in the company's <strong>ReactJS</strong> web application.</li></ul>
+      <h2 id="why-game-dev-skills-transfer-so-well">Why game-dev skills transfer so well</h2>
+      <p>A real-time 3D industrial tool needs the same things a game does: clean 3D assets, a smooth frame rate, clear interaction and solid architecture. The difference is that accuracy matters even more. A valve in the wrong place isn't a visual bug, it's wrong information for an engineer. Working on DPT made me much more careful about matching 3D content to real-world specifications.</p>
+      <h2 id="tech-stack">Tech stack</h2>
+      <p>Unity 3D, C#, Blender, real-time data integration, PDF report generation, ReactJS.</p>
+      <div class="b-links-box"><strong>Links</strong><ul><li><a href="https://www.aquila-engineer.com/digital-pressure-testing/" target="_blank" rel="noopener">Aquila Digital Pressure Testing ↗</a></li></ul></div>
+        </div>
+        <aside class="b-side">
+          <div class="b-card"><p class="mono b-side-t">ON THIS PAGE</p><ul class="b-toc"><li><a href="#the-domain-in-one-minute">The domain in one minute</a></li><li><a href="#my-role">My role</a></li><li><a href="#why-game-dev-skills-transfer-so-well">Why game-dev skills transfer so well</a></li><li><a href="#tech-stack">Tech stack</a></li></ul></div>
+          <div class="b-card b-cta">
+            <p class="mono b-side-t">🟢 AVAILABLE FOR HIRE</p>
+            <p>Need a Unity developer for your game? Full-time, freelance or remote, based in Pune.</p>
+            <a class="b-btn" href="https://sachinkorde.github.io/portfolio/#contact">Hire Sachin</a>
+            <a class="b-btn ghost" href="https://sachinkorde.github.io/portfolio/assets/Sachin_Korde_Resume.pdf">Resume (PDF)</a>
+          </div>
+        </aside>
+      </div>
+    </article>
+
+    <section class="b-author">
+      <div class="b-avatar">SK</div>
+      <div>
+        <p class="mono b-side-t">ABOUT THE AUTHOR</p>
+        <p><strong>Sachin Korde</strong> is a Unity 3D game developer in Pune, India with 5+ years of experience in mobile games, AR/VR and real-time multiplayer. He has worked on official TMKOC games, Kiddopia, Cadaviz and Aquila's Digital Pressure Testing platform. <a href="https://sachinkorde.github.io/portfolio/">See the portfolio →</a></p>
+      </div>
+    </section>
+
+    <section class="b-related">
+      <h2>More case studies</h2>
+      <div class="b-cards">
+        <a class="b-pcard" href="cadaviz-virtual-dissection-table-unity-developer.html">
+          <span class="b-pimg"><img src="https://immersivelabz.com/wp-content/uploads/2024/10/cadaviz.png" alt="" loading="lazy" referrerpolicy="no-referrer" /></span>
+          <span class="b-pbody">
+            <span class="mono b-pk">ImmersiveVision Technology</span>
+            <span class="b-pt">Joining a Large Unity Codebase: My Work on Cadaviz, a Virtual Dissection Table</span>
+            <span class="b-pd">How I got up to speed on the large Cadaviz Unity codebase on my own and designed a new section for the Male Full Body module with a clean, modular class structure.</span>
+            <span class="mono b-pr">2 min read →</span>
+          </span>
+        </a>
+        <a class="b-pcard" href="diwali-liveops-event-unity-cooking-super-star-world-of-carrom.html">
+          <span class="b-pimg"><img src="https://play-lh.googleusercontent.com/TzFRhSGgbEnxQlIvuOC4qbzf6hpKQ3P4FJckdlvYEdUm5l1d1iO0P47spy70yyUKgHAI0RHAVbGfqEHWrPEwWA=s512" alt="" loading="lazy" referrerpolicy="no-referrer" /></span>
+          <span class="b-pbody">
+            <span class="mono b-pk">AppOn</span>
+            <span class="b-pt">Shipping a Diwali LiveOps Event in Unity: Cooking Super Star &amp; World Of Carrom</span>
+            <span class="b-pd">How I built a limited-time Diwali festival event, new levels and animated UI popups for AppOn's Cooking Super Star and World Of Carrom mobile games in Unity.</span>
+            <span class="mono b-pr">2 min read →</span>
+          </span>
+        </a>
+        <a class="b-pcard" href="augment-works-web-developer-to-unity-ar-vr-developer.html">
+          <span class="b-pimg"><img src="https://magicjoeyapp.com/wp-content/uploads/2021/04/Magic-Joey_Logo-design_.png" alt="" loading="lazy" referrerpolicy="no-referrer" /></span>
+          <span class="b-pbody">
+            <span class="mono b-pk">Augment Works</span>
+            <span class="b-pt">From Web Developer to Unity AR/VR Developer: Magic Joey, Human Anatomy AR and Industrial VR</span>
+            <span class="b-pd">How I started my career building websites with WordPress, PHP and JavaScript, then moved into Unity AR/VR development: Magic Joey AR learning cards, a Human Anatomy AR app and an industrial VR project.</span>
+            <span class="mono b-pr">2 min read →</span>
+          </span>
+        </a></div>
+    </section>
+  </main>
+  <footer class="b-foot">
+    <div class="b-wrap">
+      <p><strong>Sachin Korde</strong> · Unity Game Developer in Pune, Maharashtra, India · Available for full-time &amp; freelance work</p>
+      <p><a href="https://sachinkorde.github.io/portfolio/">Portfolio</a> · <a href="./">Blog</a> · <a href="https://sachinkorde.github.io/portfolio/#arcade">Play 10 mini-games</a> · <a href="https://www.linkedin.com/in/sachinkorde/" target="_blank" rel="noopener">LinkedIn</a> · <a href="mailto:sachinkorde1993@gmail.com">Email</a></p>
+    </div>
+  </footer>
+</body>
+</html>

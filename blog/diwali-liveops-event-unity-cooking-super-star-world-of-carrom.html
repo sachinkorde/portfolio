@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Unity LiveOps Event Case Study: Diwali Event for Mobile Games | Sachin Korde</title>
+  <meta name="description" content="How I built a limited-time Diwali festival event, new levels and animated UI popups for AppOn's Cooking Super Star and World Of Carrom mobile games in Unity." />
+  <meta name="keywords" content="Unity LiveOps, mobile game events, Diwali game event, Cooking Super Star, World Of Carrom, Unity UI animation, game developer Pune" />
+  <meta name="author" content="Sachin Korde" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="geo.region" content="IN-MH" />
+  <meta name="geo.placename" content="Pune" />
+  <link rel="canonical" href="https://sachinkorde.github.io/portfolio/blog/diwali-liveops-event-unity-cooking-super-star-world-of-carrom.html" />
+  <meta name="theme-color" content="#070a14" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Sachin Korde — Unity Game Developer" />
+  <meta property="og:title" content="Unity LiveOps Event Case Study: Diwali Event for Mobile Games | Sachin Korde" />
+  <meta property="og:description" content="How I built a limited-time Diwali festival event, new levels and animated UI popups for AppOn's Cooking Super Star and World Of Carrom mobile games in Unity." />
+  <meta property="og:url" content="https://sachinkorde.github.io/portfolio/blog/diwali-liveops-event-unity-cooking-super-star-world-of-carrom.html" />
+  <meta property="og:image" content="https://play-lh.googleusercontent.com/TzFRhSGgbEnxQlIvuOC4qbzf6hpKQ3P4FJckdlvYEdUm5l1d1iO0P47spy70yyUKgHAI0RHAVbGfqEHWrPEwWA=s512" />
+  <meta property="og:locale" content="en_IN" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Unity LiveOps Event Case Study: Diwali Event for Mobile Games | Sachin Korde" />
+  <meta name="twitter:description" content="How I built a limited-time Diwali festival event, new levels and animated UI popups for AppOn's Cooking Super Star and World Of Carrom mobile games in Unity." />
+  <meta name="twitter:image" content="https://play-lh.googleusercontent.com/TzFRhSGgbEnxQlIvuOC4qbzf6hpKQ3P4FJckdlvYEdUm5l1d1iO0P47spy70yyUKgHAI0RHAVbGfqEHWrPEwWA=s512" />
+  <meta property="article:published_time" content="2026-11-15" />
+  <meta property="article:author" content="https://sachinkorde.github.io/portfolio/" />
+  <meta property="article:tag" content="Unity" />
+  <meta property="article:tag" content="C#" />
+  <meta property="article:tag" content="LiveOps" />
+  <meta property="article:tag" content="UI Animation" />
+  <meta property="article:tag" content="Level Design" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/blog.css?v=1" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","headline":"Shipping a Diwali LiveOps Event in Unity: Cooking Super Star & World Of Carrom","description":"How I built a limited-time Diwali festival event, new levels and animated UI popups for AppOn's Cooking Super Star and World Of Carrom mobile games in Unity.","image":"https://play-lh.googleusercontent.com/TzFRhSGgbEnxQlIvuOC4qbzf6hpKQ3P4FJckdlvYEdUm5l1d1iO0P47spy70yyUKgHAI0RHAVbGfqEHWrPEwWA=s512","datePublished":"2026-11-15","dateModified":"2026-11-15","author":{"@type":"Person","@id":"https://sachinkorde.github.io/portfolio/#person","name":"Sachin Korde","url":"https://sachinkorde.github.io/portfolio/","jobTitle":"Unity 3D Game Developer","sameAs":["https://www.linkedin.com/in/sachinkorde/","https://github.com/sachinkorde"],"address":{"@type":"PostalAddress","addressLocality":"Pune","addressRegion":"Maharashtra","addressCountry":"IN"}},"publisher":{"@type":"Person","@id":"https://sachinkorde.github.io/portfolio/#person","name":"Sachin Korde","url":"https://sachinkorde.github.io/portfolio/","jobTitle":"Unity 3D Game Developer","sameAs":["https://www.linkedin.com/in/sachinkorde/","https://github.com/sachinkorde"],"address":{"@type":"PostalAddress","addressLocality":"Pune","addressRegion":"Maharashtra","addressCountry":"IN"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://sachinkorde.github.io/portfolio/blog/diwali-liveops-event-unity-cooking-super-star-world-of-carrom.html"},"keywords":"Unity LiveOps, mobile game events, Diwali game event, Cooking Super Star, World Of Carrom, Unity UI animation, game developer Pune","articleSection":"Case Studies","inLanguage":"en-IN","wordCount":252},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Portfolio","item":"https://sachinkorde.github.io/portfolio/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://sachinkorde.github.io/portfolio/blog/"},{"@type":"ListItem","position":3,"name":"Shipping a Diwali LiveOps Event in Unity: Cooking Super Star & World Of Carrom","item":"https://sachinkorde.github.io/portfolio/blog/diwali-liveops-event-unity-cooking-super-star-world-of-carrom.html"}]}]}</script>
+</head>
+<body>
+  <header class="b-nav">
+    <div class="b-wrap b-nav-in">
+      <a class="b-logo" href="../"><span class="b-mark">SK</span><span>Sachin.Korde</span></a>
+      <nav class="b-links">
+        <a href="../#levels">Projects</a>
+        <a href="../#arcade">Arcade</a>
+        <a href="./">Blog</a>
+        <a class="b-hire" href="../#contact">Hire Me</a>
+      </nav>
+    </div>
+  </header>
+  <main class="b-wrap b-post">
+    <nav class="b-crumbs mono" aria-label="Breadcrumb"><a href="../">Portfolio</a> / <a href="./">Blog</a> / <span>Case study</span></nav>
+    <article>
+      <header class="b-head">
+        <p class="b-kicker mono">CASE STUDY · AppOn · Sep 2023 – Nov 2023</p>
+        <h1>Shipping a Diwali LiveOps Event in Unity: Cooking Super Star &amp; World Of Carrom</h1>
+        <p class="b-lead">How I built a limited-time Diwali festival event, new levels and animated UI popups for AppOn's Cooking Super Star and World Of Carrom mobile games in Unity.</p>
+        <div class="b-meta mono">
+          <span>By <a href="https://sachinkorde.github.io/portfolio/">Sachin Korde</a>, Unity Developer, Pune</span>
+          <span>2 min read</span>
+          <time datetime="2026-11-15">15 Nov 2026</time>
+        </div>
+        <div class="b-tags"><span>Unity</span><span>C#</span><span>LiveOps</span><span>UI Animation</span><span>Level Design</span></div>
+      </header>
+      <div class="b-grid">
+        <div class="b-body">
+      <p>Live mobile games stay alive through events. A good seasonal event gives existing players a reason to come back and gives the game a fresh look. At <strong>AppOn</strong>, I built a <strong>Diwali festival event</strong> for two live games: <strong>Cooking Super Star – Tasty City</strong> and <strong>World Of Carrom: 3D Board Game</strong>.</p>
+      <h2 id="what-i-built">What I built</h2>
+      <ul><li><strong>A limited-time Diwali event</strong> for both games: festival-themed content that appears only for the event period.</li><li><strong>New levels</strong> for Cooking Super Star, extending the game's content.</li><li><strong>Animated popups</strong>: I created the UI animations for popups so rewards and announcements feel exciting instead of flat.</li><li><strong>Gameplay improvements</strong>: I worked side by side with the game designer to refine and improve the game.</li><li><strong>Performance</strong>: I optimized the games for smooth play across devices.</li></ul>
+      <h2 id="working-with-a-game-designer">Working with a game designer</h2>
+      <p>Events are a team effort. The game designer defines what the event should feel like and how it should reward players, and the developer makes it real and makes it work. Sitting together, trying things in the game and adjusting quickly is much faster than going back and forth over documents.</p>
+      <h2 id="why-popup-animation-matters">Why popup animation matters</h2>
+      <p>Popups are where players get rewards, see offers and learn about events, so they're seen constantly. A popup that animates in with a bit of bounce and timing feels like a celebration, while one that just appears feels like an interruption. Small UI animation work has a big effect on how polished a game feels.</p>
+      <h2 id="tech-stack">Tech stack</h2>
+      <p>Unity, C#, Unity UI animation, level design, mobile performance optimization.</p>
+      
+        </div>
+        <aside class="b-side">
+          <div class="b-card"><p class="mono b-side-t">ON THIS PAGE</p><ul class="b-toc"><li><a href="#what-i-built">What I built</a></li><li><a href="#working-with-a-game-designer">Working with a game designer</a></li><li><a href="#why-popup-animation-matters">Why popup animation matters</a></li><li><a href="#tech-stack">Tech stack</a></li></ul></div>
+          <div class="b-card b-cta">
+            <p class="mono b-side-t">🟢 AVAILABLE FOR HIRE</p>
+            <p>Need a Unity developer for your game? Full-time, freelance or remote, based in Pune.</p>
+            <a class="b-btn" href="https://sachinkorde.github.io/portfolio/#contact">Hire Sachin</a>
+            <a class="b-btn ghost" href="https://sachinkorde.github.io/portfolio/assets/Sachin_Korde_Resume.pdf">Resume (PDF)</a>
+          </div>
+        </aside>
+      </div>
+    </article>
+
+    <section class="b-author">
+      <div class="b-avatar">SK</div>
+      <div>
+        <p class="mono b-side-t">ABOUT THE AUTHOR</p>
+        <p><strong>Sachin Korde</strong> is a Unity 3D game developer in Pune, India with 5+ years of experience in mobile games, AR/VR and real-time multiplayer. He has worked on official TMKOC games, Kiddopia, Cadaviz and Aquila's Digital Pressure Testing platform. <a href="https://sachinkorde.github.io/portfolio/">See the portfolio →</a></p>
+      </div>
+    </section>
+
+    <section class="b-related">
+      <h2>More case studies</h2>
+      <div class="b-cards">
+        <a class="b-pcard" href="augment-works-web-developer-to-unity-ar-vr-developer.html">
+          <span class="b-pimg"><img src="https://magicjoeyapp.com/wp-content/uploads/2021/04/Magic-Joey_Logo-design_.png" alt="" loading="lazy" referrerpolicy="no-referrer" /></span>
+          <span class="b-pbody">
+            <span class="mono b-pk">Augment Works</span>
+            <span class="b-pt">From Web Developer to Unity AR/VR Developer: Magic Joey, Human Anatomy AR and Industrial VR</span>
+            <span class="b-pd">How I started my career building websites with WordPress, PHP and JavaScript, then moved into Unity AR/VR development: Magic Joey AR learning cards, a Human Anatomy AR app and an industrial VR project.</span>
+            <span class="mono b-pr">2 min read →</span>
+          </span>
+        </a>
+        <a class="b-pcard" href="real-time-multiplayer-card-casino-games-unity.html">
+          <span class="b-pimg"><img src="https://sachinkorde.github.io/portfolio/og-image.png" alt="" loading="lazy" referrerpolicy="no-referrer" /></span>
+          <span class="b-pbody">
+            <span class="mono b-pk">Freelance &amp; client projects</span>
+            <span class="b-pt">Building Real-Time Multiplayer Card &amp; Casino Games: Rummy, Bingo and More</span>
+            <span class="b-pd">My experience building real-time multiplayer card and casino-style games such as Rummy, Bingo, Roulette and dice games with sockets, server-synced rounds and fair results.</span>
+            <span class="mono b-pr">2 min read →</span>
+          </span>
+        </a>
+        <a class="b-pcard" href="hire-unity-game-developer-pune.html">
+          <span class="b-pimg"><img src="https://sachinkorde.github.io/portfolio/og-image.png" alt="" loading="lazy" referrerpolicy="no-referrer" /></span>
+          <span class="b-pbody">
+            <span class="mono b-pk">Sachin Korde</span>
+            <span class="b-pt">Looking to Hire a Unity Game Developer in Pune? Here's What I Bring</span>
+            <span class="b-pd">Hiring a Unity developer in Pune or remote? I'm Sachin Korde, a Unity 3D game developer with 5+ years of experience in mobile games, AR/VR and multiplayer. Available full-time and freelance.</span>
+            <span class="mono b-pr">2 min read →</span>
+          </span>
+        </a></div>
+    </section>
+  </main>
+  <footer class="b-foot">
+    <div class="b-wrap">
+      <p><strong>Sachin Korde</strong> · Unity Game Developer in Pune, Maharashtra, India · Available for full-time &amp; freelance work</p>
+      <p><a href="https://sachinkorde.github.io/portfolio/">Portfolio</a> · <a href="./">Blog</a> · <a href="https://sachinkorde.github.io/portfolio/#arcade">Play 10 mini-games</a> · <a href="https://www.linkedin.com/in/sachinkorde/" target="_blank" rel="noopener">LinkedIn</a> · <a href="mailto:sachinkorde1993@gmail.com">Email</a></p>
+    </div>
+  </footer>
+</body>
+</html>

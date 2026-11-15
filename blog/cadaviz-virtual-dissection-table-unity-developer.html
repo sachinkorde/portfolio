@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cadaviz Unity Case Study: Medical 3D Virtual Dissection | Sachin Korde</title>
+  <meta name="description" content="How I got up to speed on the large Cadaviz Unity codebase on my own and designed a new section for the Male Full Body module with a clean, modular class structure." />
+  <meta name="keywords" content="Cadaviz, virtual dissection table, Unity medical simulation, Unity 3D anatomy, Unity code architecture, medical 3D app developer, Unity developer India" />
+  <meta name="author" content="Sachin Korde" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="geo.region" content="IN-MH" />
+  <meta name="geo.placename" content="Pune" />
+  <link rel="canonical" href="https://sachinkorde.github.io/portfolio/blog/cadaviz-virtual-dissection-table-unity-developer.html" />
+  <meta name="theme-color" content="#070a14" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Sachin Korde — Unity Game Developer" />
+  <meta property="og:title" content="Cadaviz Unity Case Study: Medical 3D Virtual Dissection | Sachin Korde" />
+  <meta property="og:description" content="How I got up to speed on the large Cadaviz Unity codebase on my own and designed a new section for the Male Full Body module with a clean, modular class structure." />
+  <meta property="og:url" content="https://sachinkorde.github.io/portfolio/blog/cadaviz-virtual-dissection-table-unity-developer.html" />
+  <meta property="og:image" content="https://immersivelabz.com/wp-content/uploads/2024/10/cadaviz.png" />
+  <meta property="og:locale" content="en_IN" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Cadaviz Unity Case Study: Medical 3D Virtual Dissection | Sachin Korde" />
+  <meta name="twitter:description" content="How I got up to speed on the large Cadaviz Unity codebase on my own and designed a new section for the Male Full Body module with a clean, modular class structure." />
+  <meta name="twitter:image" content="https://immersivelabz.com/wp-content/uploads/2024/10/cadaviz.png" />
+  <meta property="article:published_time" content="2026-11-15" />
+  <meta property="article:author" content="https://sachinkorde.github.io/portfolio/" />
+  <meta property="article:tag" content="Unity 3D" />
+  <meta property="article:tag" content="C#" />
+  <meta property="article:tag" content="OOP" />
+  <meta property="article:tag" content="Medical 3D" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/blog.css?v=1" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","headline":"Joining a Large Unity Codebase: My Work on Cadaviz, a Virtual Dissection Table","description":"How I got up to speed on the large Cadaviz Unity codebase on my own and designed a new section for the Male Full Body module with a clean, modular class structure.","image":"https://immersivelabz.com/wp-content/uploads/2024/10/cadaviz.png","datePublished":"2026-11-15","dateModified":"2026-11-15","author":{"@type":"Person","@id":"https://sachinkorde.github.io/portfolio/#person","name":"Sachin Korde","url":"https://sachinkorde.github.io/portfolio/","jobTitle":"Unity 3D Game Developer","sameAs":["https://www.linkedin.com/in/sachinkorde/","https://github.com/sachinkorde"],"address":{"@type":"PostalAddress","addressLocality":"Pune","addressRegion":"Maharashtra","addressCountry":"IN"}},"publisher":{"@type":"Person","@id":"https://sachinkorde.github.io/portfolio/#person","name":"Sachin Korde","url":"https://sachinkorde.github.io/portfolio/","jobTitle":"Unity 3D Game Developer","sameAs":["https://www.linkedin.com/in/sachinkorde/","https://github.com/sachinkorde"],"address":{"@type":"PostalAddress","addressLocality":"Pune","addressRegion":"Maharashtra","addressCountry":"IN"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://sachinkorde.github.io/portfolio/blog/cadaviz-virtual-dissection-table-unity-developer.html"},"keywords":"Cadaviz, virtual dissection table, Unity medical simulation, Unity 3D anatomy, Unity code architecture, medical 3D app developer, Unity developer India","articleSection":"Case Studies","inLanguage":"en-IN","wordCount":239},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Portfolio","item":"https://sachinkorde.github.io/portfolio/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://sachinkorde.github.io/portfolio/blog/"},{"@type":"ListItem","position":3,"name":"Joining a Large Unity Codebase: My Work on Cadaviz, a Virtual Dissection Table","item":"https://sachinkorde.github.io/portfolio/blog/cadaviz-virtual-dissection-table-unity-developer.html"}]}]}</script>
+</head>
+<body>
+  <header class="b-nav">
+    <div class="b-wrap b-nav-in">
+      <a class="b-logo" href="../"><span class="b-mark">SK</span><span>Sachin.Korde</span></a>
+      <nav class="b-links">
+        <a href="../#levels">Projects</a>
+        <a href="../#arcade">Arcade</a>
+        <a href="./">Blog</a>
+        <a class="b-hire" href="../#contact">Hire Me</a>
+      </nav>
+    </div>
+  </header>
+  <main class="b-wrap b-post">
+    <nav class="b-crumbs mono" aria-label="Breadcrumb"><a href="../">Portfolio</a> / <a href="./">Blog</a> / <span>Case study</span></nav>
+    <article>
+      <header class="b-head">
+        <p class="b-kicker mono">CASE STUDY · ImmersiveVision Technology · Jul 2024 – Sep 2024</p>
+        <h1>Joining a Large Unity Codebase: My Work on Cadaviz, a Virtual Dissection Table</h1>
+        <p class="b-lead">How I got up to speed on the large Cadaviz Unity codebase on my own and designed a new section for the Male Full Body module with a clean, modular class structure.</p>
+        <div class="b-meta mono">
+          <span>By <a href="https://sachinkorde.github.io/portfolio/">Sachin Korde</a>, Unity Developer, Pune</span>
+          <span>2 min read</span>
+          <time datetime="2026-11-15">15 Nov 2026</time>
+        </div>
+        <div class="b-tags"><span>Unity 3D</span><span>C#</span><span>OOP</span><span>Medical 3D</span></div>
+      </header>
+      <div class="b-grid">
+        <div class="b-body">
+      <p><strong>Cadaviz</strong> is an advanced virtual human dissection table with more than 90 installations, used by medical colleges for interactive 3D anatomy learning. At <strong>ImmersiveVision Technology</strong> I added a new section to its <strong>Male Full Body</strong> module.</p>
+      <h2 id="the-real-challenge-a-large-unfamiliar-codebase">The real challenge: a large, unfamiliar codebase</h2>
+      <p>Adding a feature to a mature product is very different from starting a new project. Before writing any code, I had to understand how Cadaviz already worked.</p>
+      <ul><li>I studied the project <strong>on my own</strong>: its architecture, how data flows through it, and its coding conventions.</li><li>I traced how existing sections were built, so my new section would fit naturally instead of being bolted on.</li></ul>
+      <h2 id="building-the-new-section">Building the new section</h2>
+      <p>Once I understood the structure, I designed and implemented the new section in the Male Full Body module. I organised it with a <strong>clean, modular class structure</strong>, so each part has a clear job and the next developer can extend it easily. The <strong>3D models and medical content</strong> were provided by the company's content team, and my job was to integrate them correctly into the product.</p>
+      <h2 id="lessons-that-apply-to-any-team">Lessons that apply to any team</h2>
+      <ul><li><strong>Read before you write.</strong> Time spent understanding existing code pays off in fewer bugs and faster reviews.</li><li><strong>Match the codebase's style.</strong> Consistency matters more than personal preference in a shared project.</li><li><strong>Keep classes small and focused.</strong> It makes content-heavy features much easier to maintain.</li></ul>
+      <h2 id="tech-stack">Tech stack</h2>
+      <p>Unity 3D, C#, object-oriented design, 3D model and content integration.</p>
+      <div class="b-links-box"><strong>Links</strong><ul><li><a href="https://immersivelabz.com/cadaviz/" target="_blank" rel="noopener">Cadaviz product page ↗</a></li></ul></div>
+        </div>
+        <aside class="b-side">
+          <div class="b-card"><p class="mono b-side-t">ON THIS PAGE</p><ul class="b-toc"><li><a href="#the-real-challenge-a-large-unfamiliar-codebase">The real challenge: a large, unfamiliar codebase</a></li><li><a href="#building-the-new-section">Building the new section</a></li><li><a href="#lessons-that-apply-to-any-team">Lessons that apply to any team</a></li><li><a href="#tech-stack">Tech stack</a></li></ul></div>
+          <div class="b-card b-cta">
+            <p class="mono b-side-t">🟢 AVAILABLE FOR HIRE</p>
+            <p>Need a Unity developer for your game? Full-time, freelance or remote, based in Pune.</p>
+            <a class="b-btn" href="https://sachinkorde.github.io/portfolio/#contact">Hire Sachin</a>
+            <a class="b-btn ghost" href="https://sachinkorde.github.io/portfolio/assets/Sachin_Korde_Resume.pdf">Resume (PDF)</a>
+          </div>
+        </aside>
+      </div>
+    </article>
+
+    <section class="b-author">
+      <div class="b-avatar">SK</div>
+      <div>
+        <p class="mono b-side-t">ABOUT THE AUTHOR</p>
+        <p><strong>Sachin Korde</strong> is a Unity 3D game developer in Pune, India with 5+ years of experience in mobile games, AR/VR and real-time multiplayer. He has worked on official TMKOC games, Kiddopia, Cadaviz and Aquila's Digital Pressure Testing platform. <a href="https://sachinkorde.github.io/portfolio/">See the portfolio →</a></p>
+      </div>
+    </section>
+
+    <section class="b-related">
+      <h2>More case studies</h2>
+      <div class="b-cards">
+        <a class="b-pcard" href="diwali-liveops-event-unity-cooking-super-star-world-of-carrom.html">
+          <span class="b-pimg"><img src="https://play-lh.googleusercontent.com/TzFRhSGgbEnxQlIvuOC4qbzf6hpKQ3P4FJckdlvYEdUm5l1d1iO0P47spy70yyUKgHAI0RHAVbGfqEHWrPEwWA=s512" alt="" loading="lazy" referrerpolicy="no-referrer" /></span>
+          <span class="b-pbody">
+            <span class="mono b-pk">AppOn</span>
+            <span class="b-pt">Shipping a Diwali LiveOps Event in Unity: Cooking Super Star &amp; World Of Carrom</span>
+            <span class="b-pd">How I built a limited-time Diwali festival event, new levels and animated UI popups for AppOn's Cooking Super Star and World Of Carrom mobile games in Unity.</span>
+            <span class="mono b-pr">2 min read →</span>
+          </span>
+        </a>
+        <a class="b-pcard" href="augment-works-web-developer-to-unity-ar-vr-developer.html">
+          <span class="b-pimg"><img src="https://magicjoeyapp.com/wp-content/uploads/2021/04/Magic-Joey_Logo-design_.png" alt="" loading="lazy" referrerpolicy="no-referrer" /></span>
+          <span class="b-pbody">
+            <span class="mono b-pk">Augment Works</span>
+            <span class="b-pt">From Web Developer to Unity AR/VR Developer: Magic Joey, Human Anatomy AR and Industrial VR</span>
+            <span class="b-pd">How I started my career building websites with WordPress, PHP and JavaScript, then moved into Unity AR/VR development: Magic Joey AR learning cards, a Human Anatomy AR app and an industrial VR project.</span>
+            <span class="mono b-pr">2 min read →</span>
+          </span>
+        </a>
+        <a class="b-pcard" href="real-time-multiplayer-card-casino-games-unity.html">
+          <span class="b-pimg"><img src="https://sachinkorde.github.io/portfolio/og-image.png" alt="" loading="lazy" referrerpolicy="no-referrer" /></span>
+          <span class="b-pbody">
+            <span class="mono b-pk">Freelance &amp; client projects</span>
+            <span class="b-pt">Building Real-Time Multiplayer Card &amp; Casino Games: Rummy, Bingo and More</span>
+            <span class="b-pd">My experience building real-time multiplayer card and casino-style games such as Rummy, Bingo, Roulette and dice games with sockets, server-synced rounds and fair results.</span>
+            <span class="mono b-pr">2 min read →</span>
+          </span>
+        </a></div>
+    </section>
+  </main>
+  <footer class="b-foot">
+    <div class="b-wrap">
+      <p><strong>Sachin Korde</strong> · Unity Game Developer in Pune, Maharashtra, India · Available for full-time &amp; freelance work</p>
+      <p><a href="https://sachinkorde.github.io/portfolio/">Portfolio</a> · <a href="./">Blog</a> · <a href="https://sachinkorde.github.io/portfolio/#arcade">Play 10 mini-games</a> · <a href="https://www.linkedin.com/in/sachinkorde/" target="_blank" rel="noopener">LinkedIn</a> · <a href="mailto:sachinkorde1993@gmail.com">Email</a></p>
+    </div>
+  </footer>
+</body>
+</html>

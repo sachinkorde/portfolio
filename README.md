@@ -26,3 +26,12 @@ After editing it, export a new PDF and copy it into `assets/`:
 "/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe" --headless=new --no-pdf-header-footer --print-to-pdf="resume/Sachin_Korde_Resume.pdf" "file:///D:/Personal_Projects/my_portfolio/resume/resume.html"
 cp resume/Sachin_Korde_Resume.pdf assets/Sachin_Korde_Resume.pdf
 ```
+
+## Blog / case studies (SEO)
+Posts live in `blog/_posts.js`. After adding or editing a post, run:
+
+```bash
+node tools/build-blog.js
+```
+
+This regenerates every `blog/*.html` page, `blog/index.html`, `sitemap.xml` and the case-study cards on the homepage. Then commit and push.
