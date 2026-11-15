@@ -46,6 +46,11 @@ img { display: block; max-width: 100%; }
 .b-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
 .b-tags span { font: 500 .72rem "JetBrains Mono", monospace; padding: 5px 9px; border-radius: 6px; background: rgba(34,211,238,.08); color: #9ce9f7; }
 
+/* featured image */
+.b-hero { margin: -6px 0 34px; max-width: 860px; }
+.b-hero img { width: 100%; height: auto; max-height: 360px; object-fit: contain; border-radius: 16px; border: 1px solid var(--border); background: radial-gradient(circle at 50% 120%, rgba(168,85,247,.35), transparent 60%), #0d1328; }
+.b-hero figcaption { margin-top: 8px; font-size: .74rem; color: var(--muted); }
+
 /* layout */
 .b-grid { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 48px; align-items: start; }
 .b-body { max-width: 720px; font-size: 1.06rem; color: var(--body); }

@@ -67,7 +67,7 @@ function head({ title, description, keywords, url, image, type, jsonld, extra = 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../css/blog.css?v=1" />
+  <link rel="stylesheet" href="../css/blog.css?v=2" />
   <script type="application/ld+json">${JSON.stringify(jsonld)}</script>
 </head>`;
 }
@@ -95,9 +95,24 @@ const footer = `
 
 const personRef = { "@type": "Person", "@id": SITE + "#person", name: AUTHOR.name, url: SITE, jobTitle: "Unity 3D Game Developer", sameAs: [AUTHOR.linkedin, "https://github.com/sachinkorde"], address: { "@type": "PostalAddress", addressLocality: "Pune", addressRegion: "Maharashtra", addressCountry: "IN" } };
 
+// ---------- Image alt text + featured images (SEO) ----------
+const IMG = {
+  "tmkoc-playschool-unity-kids-learning-app-case-study": { alt: "TMKOC Playschool Kids Learning app icon, a Unity e-learning game for children based on the TMKOC TV serial" },
+  "tmkoc-games-unity-performance-optimization": { alt: "Run Jetha Run TMKOC endless runner game icon featuring Jethalal, optimized in Unity" },
+  "kiddopia-k-man-flying-pathpuzzle-unity-2d-spine": { alt: "Kiddopia kids learning app icon, home of K-Man Flying and PathPuzzle Unity 2D games" },
+  "digital-pressure-testing-unity-3d-oil-gas-digital-twin": { alt: "Digital Pressure Testing (DPT) software on a tablet at an oil and gas drilling rig at night" },
+  "cadaviz-virtual-dissection-table-unity-developer": { alt: "Cadaviz virtual human dissection table used by medical colleges for 3D anatomy learning" },
+  "diwali-liveops-event-unity-cooking-super-star-world-of-carrom": { alt: "Cooking Super Star Tasty City game icon, an AppOn mobile cooking game with a Diwali event" },
+  "augment-works-web-developer-to-unity-ar-vr-developer": { alt: "Magic Joey logo, an augmented reality learning cards app for kids built in Unity" },
+  "real-time-multiplayer-card-casino-games-unity": { src: SITE + "assets/projects/rummy-card-games.svg", alt: "Illustration of a multiplayer Rummy card game: playing cards on a green table with four players" },
+  "hire-unity-game-developer-pune": { alt: "Sachin Korde, Unity game developer in Pune, available for hire: full-time and freelance" },
+};
+const imgOf = (p, small) => ({ src: ((IMG[p.slug] && IMG[p.slug].src) || p.image).replace(/=s512$/, small ? "=s256-rw" : "=s512-rw"), alt: (IMG[p.slug] && IMG[p.slug].alt) || `${p.title} - case study by Sachin Korde` });
+
 // ---------- Post pages ----------
 posts.forEach((p, i) => {
   const url = BLOG + p.slug + ".html";
+  const hero = imgOf(p);
   const nextPosts = [posts[(i + 1) % posts.length], posts[(i + 2) % posts.length], posts[(i + 3) % posts.length]].filter((q) => q !== p);
   const toc = p.body.filter(([t]) => t === "h2").map(([, v]) => `<li><a href="#${v.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")}">${inline(v)}</a></li>`).join("");
   const jsonld = {
@@ -107,7 +122,7 @@ posts.forEach((p, i) => {
         "@type": "BlogPosting",
         headline: p.title,
         description: p.description,
-        image: p.image,
+        image: { "@type": "ImageObject", url: hero.src, caption: hero.alt },
         datePublished: DATE,
         dateModified: DATE,
         author: personRef,
@@ -147,6 +162,10 @@ posts.forEach((p, i) => {
         </div>
         <div class="b-tags">${p.tags.map((t) => `<span>${esc(t)}</span>`).join("")}</div>
       </header>
+      <figure class="b-hero">
+        <img src="${hero.src}" alt="${esc(hero.alt)}" width="640" height="360" fetchpriority="high" decoding="async" referrerpolicy="no-referrer" />
+        <figcaption class="mono">${esc(hero.alt)}</figcaption>
+      </figure>
       <div class="b-grid">
         <div class="b-body">
       ${renderBody(p.body)}
@@ -186,7 +205,7 @@ posts.forEach((p, i) => {
 function card(q, prefix) {
   return `
         <a class="b-pcard" href="${prefix}${q.slug}.html">
-          <span class="b-pimg"><img src="${q.image}" alt="" loading="lazy" referrerpolicy="no-referrer" /></span>
+          <span class="b-pimg"><img src="${imgOf(q, true).src.replace(SITE, prefix ? "" : "../")}" alt="${esc(imgOf(q).alt)}" width="640" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer" /></span>
           <span class="b-pbody">
             <span class="mono b-pk">${esc(q.company)}</span>
             <span class="b-pt">${esc(q.title)}</span>
@@ -228,18 +247,60 @@ fs.writeFileSync(path.join(ROOT, "blog", "index.html"), `${head({
 </html>
 `);
 
-// ---------- Sitemap ----------
+// ---------- Portfolio projects (read from js/data.js) ----------
+const vm = require("vm");
+const ctx = {};
+vm.runInNewContext(fs.readFileSync(path.join(ROOT, "js", "data.js"), "utf8") + ";this.PORTFOLIO=PORTFOLIO;", ctx);
+const projects = ctx.PORTFOLIO.projects;
+const abs = (u) => (/^https?:/.test(u) ? u : SITE + u);
+const projImg = (p) => (p.image || p.icon ? { src: abs(p.image || p.icon), alt: p.alt || p.title } : null);
+
+// ---------- Sitemap (with image entries for Google Images) ----------
+const imgTag = (im) => `\n    <image:image>\n      <image:loc>${esc(im.src)}</image:loc>\n    </image:image>`;
+const seenImg = new Set();
+const homeImgs = [{ src: SITE + "og-image.png" }, ...projects.map(projImg).filter(Boolean)].filter((im) => !seenImg.has(im.src) && seenImg.add(im.src));
 const urls = [
-  { loc: SITE, pr: "1.0" },
-  { loc: BLOG, pr: "0.9" },
-  ...posts.map((p) => ({ loc: BLOG + p.slug + ".html", pr: "0.8" })),
-  { loc: SITE + "assets/Sachin_Korde_Resume.pdf", pr: "0.6" },
+  { loc: SITE, pr: "1.0", imgs: homeImgs },
+  { loc: BLOG, pr: "0.9", imgs: [] },
+  ...posts.map((p) => ({ loc: BLOG + p.slug + ".html", pr: "0.8", imgs: [imgOf(p)] })),
+  { loc: SITE + "assets/Sachin_Korde_Resume.pdf", pr: "0.6", imgs: [] },
 ];
 fs.writeFileSync(path.join(ROOT, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls.map((u) => `  <url>\n    <loc>${u.loc}</loc>\n    <lastmod>${DATE}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>${u.pr}</priority>\n  </url>`).join("\n")}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+${urls.map((u) => `  <url>\n    <loc>${u.loc}</loc>\n    <lastmod>${DATE}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>${u.pr}</priority>${u.imgs.map(imgTag).join("")}\n  </url>`).join("\n")}
 </urlset>
 `);
+
+// ---------- Projects as structured data (ItemList of CreativeWork) ----------
+const projectsLd = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Unity game development projects by Sachin Korde",
+  itemListElement: projects.map((p, i) => {
+    const im = projImg(p);
+    const item = {
+      "@type": p.link && /play\.google/.test(p.link) ? "SoftwareApplication" : "CreativeWork",
+      name: p.title,
+      description: p.description,
+      creator: { "@id": SITE + "#person" },
+      keywords: (p.tags || []).join(", "),
+    };
+    if (item["@type"] === "SoftwareApplication") { item.applicationCategory = "GameApplication"; item.operatingSystem = "Android"; }
+    if (im) item.image = { "@type": "ImageObject", url: im.src, caption: im.alt };
+    if (p.link) item.url = p.link;
+    return { "@type": "ListItem", position: i + 1, item };
+  }),
+};
+
+// ---------- Plain-HTML project list for no-JS visitors and crawlers ----------
+const noscript = `<noscript>
+          <ul class="noscript-projects">${projects.map((p) => {
+            const im = projImg(p);
+            return `
+            <li>${im ? `<img src="${esc(im.src.replace(SITE, ""))}" alt="${esc(im.alt)}" width="96" height="54" loading="lazy" />` : ""}<strong>${esc(p.title)}</strong>${p.org ? ` (${esc(p.org)})` : ""}: ${esc(p.description)}${p.link ? ` <a href="${esc(p.link)}">${esc(p.linkLabel || "View")}</a>` : ""}</li>`;
+          }).join("")}
+          </ul>
+        </noscript>`;
 
 // ---------- Homepage cards (static HTML so Google can read them) ----------
 const indexPath = path.join(ROOT, "index.html");
@@ -248,7 +309,13 @@ const START = "<!-- BLOG:START -->", END = "<!-- BLOG:END -->";
 if (home.includes(START)) {
   const cards = posts.slice(0, 6).map((p) => card(p, "blog/")).join("");
   home = home.replace(new RegExp(`${START}[\\s\\S]*?${END}`), `${START}${cards}\n        ${END}`);
-  fs.writeFileSync(indexPath, home);
 }
+const swap = (a, b, content) => {
+  const s = home.indexOf(a), e = home.indexOf(b);
+  if (s >= 0 && e > s) home = home.slice(0, s + a.length) + content + home.slice(e);
+};
+swap("<!-- PROJECTS-LD:START -->", "<!-- PROJECTS-LD:END -->", `\n  <script type="application/ld+json">${JSON.stringify(projectsLd)}</script>\n  `);
+swap("<!-- PROJECTS-NOSCRIPT:START -->", "<!-- PROJECTS-NOSCRIPT:END -->", `\n        ${noscript}\n        `);
+fs.writeFileSync(indexPath, home);
 
 console.log(`Built ${posts.length} posts + blog index + sitemap (${urls.length} URLs).`);

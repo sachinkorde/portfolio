@@ -37,6 +37,7 @@ const PORTFOLIO = {
   projects: [
     {
       title: "Digital Pressure Testing (DPT)",
+      alt: "Digital Pressure Testing (DPT) Unity 3D software on a tablet at an oil and gas drilling rig, Aquila project by Sachin Korde",
       company: "Aquila",
       org: "Aquila Digital Energy Solutions",
       description:
@@ -49,6 +50,7 @@ const PORTFOLIO = {
     },
     {
       title: "Cadaviz — Virtual Dissection Table",
+      alt: "Cadaviz virtual human dissection table, a Unity 3D medical anatomy product by ImmersiveVision",
       company: "ImmersiveVision",
       org: "ImmersiveVision Technology",
       description:
@@ -61,105 +63,115 @@ const PORTFOLIO = {
     },
     {
       title: "TMKOC Playschool Kids Learning",
+      alt: "TMKOC Playschool Kids Learning app icon, a Unity e-learning game for children built by Sachin Korde",
       company: "Neela Mediatech",
       org: "Neela Mediatech · TMKOC",
       description:
         "An e-learning app for kids based on Taarak Mehta Ka Ooltah Chashmah (TMKOC), India's No. 1 TV serial. Built from scratch: registration flow, student dashboard, API data fetch/display/update, server content downloads via Addressables, and localization. Also built the Paint, ABCD Tracing and Puzzle learning games inside the app.",
       tags: ["Unity", "C#", "REST API", "Addressables", "Localization"],
-      icon: "https://play-lh.googleusercontent.com/CajKjdg47A8vXsTcdW5kgBCX90SGUQux5InYjiseWUJbhPKjUawjxmH04Ka3_e5FGAGqw4VV-Bei34GbTea0Hg=s256",
+      icon: "https://play-lh.googleusercontent.com/CajKjdg47A8vXsTcdW5kgBCX90SGUQux5InYjiseWUJbhPKjUawjxmH04Ka3_e5FGAGqw4VV-Bei34GbTea0Hg=s192-rw",
       link: "https://play.google.com/store/apps/details?id=com.neelamediatech.playschool",
       repo: "",
     },
     {
       title: "Run Jetha Run | TMKOC Game",
+      alt: "Run Jetha Run TMKOC endless runner game icon featuring Jethalal, Unity 3D mobile game",
       company: "Neela Mediatech",
       org: "Neela Mediatech · TMKOC",
       description:
         "An endless runner starring Jethalal from TMKOC, India's No. 1 TV serial. Optimized performance to remove lag, made animations smoother, and worked alongside the 3D modeler to update and create new 3D models.",
       tags: ["Unity 3D", "C#", "Optimization", "Animation"],
-      icon: "https://play-lh.googleusercontent.com/CaFU42VXHbxvxrNedzz7CBS-GvoNs7NV6l41ZQWGlGBZjJzCnVdGNhUTJeIBoCqU4FB0TvSOHWsd2txLqTWkHg=s256",
+      icon: "https://play-lh.googleusercontent.com/CaFU42VXHbxvxrNedzz7CBS-GvoNs7NV6l41ZQWGlGBZjJzCnVdGNhUTJeIBoCqU4FB0TvSOHWsd2txLqTWkHg=s192-rw",
       link: "https://play.google.com/store/apps/details?id=com.tmkocplay.run.jetha.run",
       repo: "",
     },
     {
       title: "Match & Merge : TMKOC Puzzle",
+      alt: "Match and Merge TMKOC Puzzle game icon, a Unity 2048-style mobile puzzle game",
       company: "Neela Mediatech",
       org: "Neela Mediatech · TMKOC",
       description:
         "A 2048-style match-and-merge puzzle game featuring TMKOC characters. Improved animations and optimized gameplay performance.",
       tags: ["Unity", "C#", "Optimization", "Animation"],
-      icon: "https://play-lh.googleusercontent.com/53xrjab7Mz0wKNx4UaSmoYvPyP0c42GfHX1FiBGwV-RuSWlrpUQwIFpFu6z2aVIfQw17zimu4D_TtOSIhzLgTw=s256",
+      icon: "https://play-lh.googleusercontent.com/53xrjab7Mz0wKNx4UaSmoYvPyP0c42GfHX1FiBGwV-RuSWlrpUQwIFpFu6z2aVIfQw17zimu4D_TtOSIhzLgTw=s192-rw",
       link: "https://play.google.com/store/apps/details?id=com.neelamediatech.tmkoc2048matchpool",
       repo: "",
     },
     {
       title: "Hungry Goli | TMKOC Game",
+      alt: "Hungry Goli TMKOC casual mobile game icon featuring Goli, made with Unity",
       company: "Neela Mediatech",
       org: "Neela Mediatech · TMKOC",
       description:
         "A casual game starring Goli from TMKOC. Gave the game its final polish and performance optimization before release.",
       tags: ["Unity", "C#", "Optimization"],
-      icon: "https://play-lh.googleusercontent.com/d7PAWehJb7xZjSB_0qELxIQpHziiVaplf7lOLjFScXj1CZenmIDzf82IHuEpLOkyrlS3BM_FkDzPEbyfRfy-DQU=s256",
+      icon: "https://play-lh.googleusercontent.com/d7PAWehJb7xZjSB_0qELxIQpHziiVaplf7lOLjFScXj1CZenmIDzf82IHuEpLOkyrlS3BM_FkDzPEbyfRfy-DQU=s192-rw",
       link: "https://play.google.com/store/apps/details?id=com.NeelaGames.HungryGoli",
       repo: "",
     },
     {
       title: "Cooking Super Star - Tasty City",
+      alt: "Cooking Super Star Tasty City cooking game icon, AppOn mobile game with a Diwali LiveOps event",
       company: "AppOn",
       org: "AppOn Innovate",
       description:
         "A live cooking-simulation game. Built a limited-time Diwali festival event and added new levels, working closely with the game designer to improve the player experience, and created animated popups for a more polished UI.",
       tags: ["Unity", "C#", "LiveOps", "UI Animation"],
-      icon: "https://play-lh.googleusercontent.com/TzFRhSGgbEnxQlIvuOC4qbzf6hpKQ3P4FJckdlvYEdUm5l1d1iO0P47spy70yyUKgHAI0RHAVbGfqEHWrPEwWA=s256",
+      icon: "https://play-lh.googleusercontent.com/TzFRhSGgbEnxQlIvuOC4qbzf6hpKQ3P4FJckdlvYEdUm5l1d1iO0P47spy70yyUKgHAI0RHAVbGfqEHWrPEwWA=s192-rw",
       link: "https://play.google.com/store/apps/details?id=com.appon.cookingstar",
       repo: "",
     },
     {
       title: "World Of Carrom : 3D Board Game",
+      alt: "World Of Carrom 3D board game icon, Unity carrom mobile game by AppOn",
       company: "AppOn",
       org: "AppOn Innovate",
       description:
         "A 3D carrom board game. Added a Diwali festival event and new content, worked with the game designer on gameplay improvements, and built animated popups for the UI.",
       tags: ["Unity 3D", "C#", "LiveOps", "UI Animation"],
-      icon: "https://play-lh.googleusercontent.com/5nfNn2k_P88pYpvlbiAte8zUeIpRYZ4UFohUsVQqd5MPARGZJc-TAtUujcvsFUQgc-Sv5oEAUgLpCHlnK7NE=s256",
+      icon: "https://play-lh.googleusercontent.com/5nfNn2k_P88pYpvlbiAte8zUeIpRYZ4UFohUsVQqd5MPARGZJc-TAtUujcvsFUQgc-Sv5oEAUgLpCHlnK7NE=s192-rw",
       link: "https://play.google.com/store/apps/details?id=com.appon.carrom",
       repo: "",
     },
     {
       title: "K-Man Flying",
+      alt: "Kiddopia kids learning app icon, home of the K-Man Flying endless space game made in Unity 2D with Spine",
       company: "Kiddopia",
       org: "Kiddopia",
       description:
         "An endless space-flying game inside Kiddopia, a popular e-learning app for toddlers. Built from scratch: gameplay, responsive controls and performance optimization, with character animations created in Spine for smooth, lively 2D motion.",
       tags: ["Unity 2D", "C#", "Spine", "Animation"],
-      icon: "https://play-lh.googleusercontent.com/YpxTvsGH_q-7MEteIa7TtE-ETM0VpSd8lE0lntg5Aaz11fLRwnPzDV9IkPiY-_iozomGgWImI-xlI8_XNUq6UUE=s256",
+      icon: "https://play-lh.googleusercontent.com/YpxTvsGH_q-7MEteIa7TtE-ETM0VpSd8lE0lntg5Aaz11fLRwnPzDV9IkPiY-_iozomGgWImI-xlI8_XNUq6UUE=s192-rw",
       link: "https://play.google.com/store/apps/details?id=com.paperboatapps.google.kiddopia",
       repo: "",
     },
     {
       title: "PathPuzzle",
+      alt: "Kiddopia kids learning app icon, home of the PathPuzzle path puzzle game for toddlers",
       company: "Kiddopia",
       org: "Kiddopia",
       description:
         "A new game for Kiddopia's Puzzles section. Kids replicate intricate paths to build strategic thinking and problem-solving, with animated hints to guide them.",
       tags: ["Unity 2D", "C#", "Animation"],
-      icon: "https://play-lh.googleusercontent.com/YpxTvsGH_q-7MEteIa7TtE-ETM0VpSd8lE0lntg5Aaz11fLRwnPzDV9IkPiY-_iozomGgWImI-xlI8_XNUq6UUE=s256",
+      icon: "https://play-lh.googleusercontent.com/YpxTvsGH_q-7MEteIa7TtE-ETM0VpSd8lE0lntg5Aaz11fLRwnPzDV9IkPiY-_iozomGgWImI-xlI8_XNUq6UUE=s192-rw",
       link: "https://play.google.com/store/apps/details?id=com.paperboatapps.google.kiddopia",
       repo: "",
     },
     {
       title: "ABCD Tracing, Paint & Cooking Master",
+      alt: "Kiddopia app icon, home of ABCD Tracing, Paint and Cooking Master learning games for toddlers",
       company: "Kiddopia",
       org: "Kiddopia",
       description:
         "More learning games for Kiddopia: letter tracing to build early literacy, a paint game for creative expression, and Cooking Master, a playful cooking game for toddlers.",
       tags: ["Unity 2D", "C#", "Game Design"],
-      icon: "https://play-lh.googleusercontent.com/YpxTvsGH_q-7MEteIa7TtE-ETM0VpSd8lE0lntg5Aaz11fLRwnPzDV9IkPiY-_iozomGgWImI-xlI8_XNUq6UUE=s256",
+      icon: "https://play-lh.googleusercontent.com/YpxTvsGH_q-7MEteIa7TtE-ETM0VpSd8lE0lntg5Aaz11fLRwnPzDV9IkPiY-_iozomGgWImI-xlI8_XNUq6UUE=s192-rw",
       link: "https://play.google.com/store/apps/details?id=com.paperboatapps.google.kiddopia",
       repo: "",
     },
     {
       title: "Magic Joey — AR Learning Cards",
+      alt: "Magic Joey logo, an augmented reality AR learning cards app for kids made in Unity",
       company: "Augment Works",
       org: "Augment Works",
       description:
@@ -172,6 +184,8 @@ const PORTFOLIO = {
     },
     {
       title: "Human Anatomy AR",
+      alt: "Illustration of the Human Anatomy AR app: a 3D human body with heart and brain labels on a phone screen",
+      image: "assets/projects/human-anatomy-ar.svg",
       company: "Augment Works",
       org: "Augment Works",
       description:
@@ -182,6 +196,8 @@ const PORTFOLIO = {
     },
     {
       title: "Industrial VR Training",
+      alt: "Illustration of an industrial VR training project: a virtual reality headset in a virtual factory",
+      image: "assets/projects/industrial-vr.svg",
       company: "Augment Works",
       org: "Augment Works",
       description:
@@ -192,6 +208,8 @@ const PORTFOLIO = {
     },
     {
       title: "Casino Game Suite",
+      alt: "Illustration of the Casino Game Suite: roulette wheel and dice, real-time Unity casino games",
+      image: "assets/projects/casino-game-suite.svg",
       company: "Other",
       description:
         "Five casino games in one app — Roulette Fun, Roulette 100, Lucky7 Dice Roll, Sic Bo Dice Roll and Fun Target — with rich animations and real-time socket connections.",
@@ -201,6 +219,8 @@ const PORTFOLIO = {
     },
     {
       title: "Coloring NoteBook",
+      alt: "Illustration of the Coloring NoteBook kids app: a coloring page with paint palette and brush",
+      image: "assets/projects/coloring-notebook.svg",
       company: "Other",
       description:
         "An interactive coloring app for toddlers with vibrant colors and engaging designs that encourage artistic expression in a simple, kid-friendly interface.",
@@ -210,6 +230,7 @@ const PORTFOLIO = {
     },
     {
       title: "The Real Bingo",
+      alt: "The Real Bingo logo, a live real-time number game with 60-second rounds",
       company: "Freelance",
       org: "Freelance",
       description:
@@ -222,6 +243,8 @@ const PORTFOLIO = {
     },
     {
       title: "Rummy & Multiplayer Card Games",
+      alt: "Illustration of a multiplayer Rummy card game: a hand of playing cards on a green table with four players",
+      image: "assets/projects/rummy-card-games.svg",
       company: "Freelance",
       org: "Freelance",
       description:

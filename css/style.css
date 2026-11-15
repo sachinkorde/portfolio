@@ -50,7 +50,7 @@ body::before {
 /* ---------- LOADER ---------- */
 .loader {
   position: fixed; inset: 0; z-index: 100; background: var(--bg);
-  display: grid; place-items: center; transition: opacity .6s ease, visibility .6s;
+  display: grid; place-items: center; transition: opacity .35s ease, visibility .35s;
 }
 .loader.done { opacity: 0; visibility: hidden; }
 .loader-inner { width: min(320px, 80vw); text-align: center; }
@@ -175,7 +175,7 @@ body.no-webgl .hero { background: radial-gradient(circle at 70% 40%, rgba(168,85
 .section { padding: 110px 0 40px; }
 .section-head { margin-bottom: 34px; }
 .section-k { color: var(--cyan); font-size: .78rem; }
-.section-head h3, .contact-title { font-family: var(--display); font-size: clamp(2rem, 4.6vw, 3.1rem); line-height: 1.05; margin-top: 8px; letter-spacing: .01em; }
+.section-head h2, .section-head h3, .contact-title { font-family: var(--display); font-size: clamp(2rem, 4.6vw, 3.1rem); line-height: 1.05; margin-top: 8px; letter-spacing: .01em; }
 .section-head p { margin-top: 8px; }
 
 .panel {
@@ -201,7 +201,7 @@ body.no-webgl .hero { background: radial-gradient(circle at 70% 40%, rgba(168,85
   animation: float 4s ease-in-out infinite;
 }
 @keyframes float { 50% { transform: translateY(-6px); } }
-.profile-meta h4 { font-family: var(--display); font-size: 1.5rem; }
+.profile-meta h3 { font-family: var(--display); font-size: 1.5rem; }
 .stats { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
 .stat { background: rgba(255,255,255,.03); border: 1px solid var(--border); border-radius: 12px; padding: 12px 14px; }
 .stat b { display: block; font-family: var(--display); font-size: 1.7rem; line-height: 1.1; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
@@ -210,8 +210,8 @@ body.no-webgl .hero { background: radial-gradient(circle at 70% 40%, rgba(168,85
 .about p + p { margin-top: 10px; }
 
 .skill-group + .skill-group { margin-top: 18px; }
-.skill-group h5 { font-family: "JetBrains Mono", monospace; font-size: .72rem; font-weight: 600; color: var(--muted); text-transform: uppercase; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
-.skill-group h5::before { content: ""; width: 8px; height: 8px; background: var(--cyan); transform: rotate(45deg); box-shadow: 0 0 10px var(--cyan); }
+.skill-group h3 { font-family: "JetBrains Mono", monospace; font-size: .72rem; font-weight: 600; color: var(--muted); text-transform: uppercase; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+.skill-group h3::before { content: ""; width: 8px; height: 8px; background: var(--cyan); transform: rotate(45deg); box-shadow: 0 0 10px var(--cyan); }
 .slots { display: flex; flex-wrap: wrap; gap: 8px; }
 .slot {
   font-size: .82rem; padding: 7px 12px; border-radius: 9px; background: rgba(255,255,255,.035); border: 1px solid var(--border);
@@ -281,7 +281,7 @@ body.no-webgl .hero { background: radial-gradient(circle at 70% 40%, rgba(168,85
 }
 .card-body { padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
 .card-org { font: 600 .7rem/1.2 "JetBrains Mono", monospace; color: var(--violet); text-transform: uppercase; }
-.card h4 { font-family: var(--display); font-size: 1.25rem; line-height: 1.2; }
+.card h3 { font-family: var(--display); font-size: 1.25rem; line-height: 1.2; }
 .card p { color: var(--muted); font-size: .9rem; flex: 1; display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical; overflow: hidden; }
 .card.expanded p { -webkit-line-clamp: unset; }
 .more { align-self: flex-start; background: none; border: 0; color: var(--cyan); font: 600 .78rem "JetBrains Mono", monospace; cursor: pointer; padding: 0; }
@@ -444,7 +444,7 @@ body.modal-open { overflow: hidden; }
 @keyframes fadeIn { from { opacity: 0; } }
 .am-box { position: relative; width: min(760px, 100%); max-height: calc(100vh - 32px); max-height: calc(100svh - 32px); display: flex; flex-direction: column; padding: 16px; background: var(--surface-solid); }
 .am-head { display: flex; align-items: center; gap: 14px; padding-bottom: 12px; border-bottom: 1px solid var(--border); margin-bottom: 12px; }
-.am-head h4 { font-family: var(--display); font-size: 1.3rem; line-height: 1.1; }
+.am-head h2 { font-family: var(--display); font-size: 1.3rem; line-height: 1.1; }
 .am-stats { margin-left: auto; display: flex; gap: 16px; font-size: .78rem; color: var(--muted); }
 .am-stats b { color: var(--gold); font-size: 1rem; }
 .am-actions { display: flex; gap: 6px; }
@@ -535,6 +535,13 @@ body.modal-open { overflow: hidden; }
   .am-actions { margin-left: auto; }
   .am-canvas { max-height: calc(100svh - 170px); }
 }
+
+/* project list shown only when JavaScript is off */
+.noscript-projects { list-style: none; display: grid; gap: 12px; margin-top: 20px; color: var(--muted); font-size: .9rem; }
+.noscript-projects li { display: flex; gap: 12px; align-items: flex-start; }
+.noscript-projects img { flex: none; border-radius: 8px; object-fit: cover; }
+.noscript-projects strong { color: var(--text); }
+.noscript-projects a { color: var(--cyan); }
 
 /* =========================================================
    CASE STUDY CARDS (homepage)

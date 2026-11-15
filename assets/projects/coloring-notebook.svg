@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="t">
+  <title id="t">Coloring NoteBook kids app illustration: coloring page with paint palette and brush</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fde68a"/><stop offset="1" stop-color="#fbcfe8"/></linearGradient>
+  </defs>
+  <rect width="640" height="360" fill="url(#bg)"/>
+  <rect x="150" y="40" width="250" height="290" rx="14" fill="#fff" stroke="#334155" stroke-width="4"/>
+  <g stroke="#334155" stroke-width="4" stroke-linejoin="round">
+    <circle cx="275" cy="150" r="62" fill="#fbbf24"/>
+    <path d="M200 300q75-90 150 0z" fill="#86efac"/>
+    <path d="M275 70l14 30 32 4-24 22 6 32-28-16-28 16 6-32-24-22 32-4z" fill="#f472b6"/>
+  </g>
+  <g transform="translate(470 210)">
+    <path d="M-80 0c0-60 50-95 105-85 60 10 75 70 45 95-20 17-45 2-60 20-12 15-25 30-50 18-28-13-40-30-40-48z" fill="#fff7ed" stroke="#334155" stroke-width="4"/>
+    <circle cx="-40" cy="-30" r="14" fill="#ef4444"/><circle cx="0" cy="-55" r="14" fill="#3b82f6"/>
+    <circle cx="45" cy="-40" r="14" fill="#22c55e"/><circle cx="50" cy="5" r="14" fill="#a855f7"/>
+    <circle cx="-45" cy="15" r="14" fill="#fbbf24"/>
+  </g>
+  <g transform="translate(450 70) rotate(40)">
+    <rect x="-8" y="0" width="16" height="120" rx="6" fill="#92400e"/>
+    <rect x="-10" y="-14" width="20" height="18" fill="#94a3b8"/>
+    <path d="M-10 -14q10-40 20 0z" fill="#ef4444"/>
+  </g>
+</svg>

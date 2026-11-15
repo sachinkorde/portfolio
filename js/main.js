@@ -11,12 +11,12 @@
     const msgs = ["Loading assets", "Compiling shaders", "Spawning player", "Ready"];
     let p = 0;
     const step = () => {
-      p = Math.min(100, p + 6 + Math.random() * 14);
+      p = Math.min(100, p + 14 + Math.random() * 16);
       $("loaderFill").style.width = p + "%";
       $("loaderPct").textContent = Math.round(p) + "%";
       $("loaderMsg").textContent = msgs[Math.min(msgs.length - 1, Math.floor(p / 34))];
-      if (p < 100) setTimeout(step, reduceMotion ? 20 : 70);
-      else setTimeout(() => { $("loader").classList.add("done"); document.body.classList.remove("loading"); introAnim(); }, 250);
+      if (p < 100) setTimeout(step, reduceMotion ? 15 : 45);
+      else setTimeout(() => { $("loader").classList.add("done"); document.body.classList.remove("loading"); introAnim(); }, 120);
     };
     step();
   })();
@@ -76,8 +76,9 @@
   // ---------- Marquee (unique app icons) ----------
   const seen = new Set();
   const shipped = d.projects.filter((p) => p.icon && /play\.google/.test(p.link || "") && !seen.has(p.link) && seen.add(p.link));
-  const mq = shipped.map((p) => `<a class="mq-item" href="${esc(p.link)}" target="_blank" rel="noopener"><img src="${esc(p.icon)}" alt="" loading="lazy" referrerpolicy="no-referrer" />${esc(p.title.split("|")[0].split(":")[0].trim())}</a>`).join("");
-  $("marquee").innerHTML = mq + mq;
+  const short = (t) => t.split("|")[0].split(":")[0].split("—")[0].trim();
+  const mqItem = (p, dup) => `<a class="mq-item" href="${esc(p.link)}" target="_blank" rel="noopener"${dup ? ' aria-hidden="true" tabindex="-1"' : ""}><img src="${esc(p.icon)}" alt="${dup ? "" : esc(short(p.title) + " game icon on Google Play")}" width="40" height="40" loading="lazy" decoding="async" referrerpolicy="no-referrer" />${esc(short(p.title))}</a>`;
+  $("marquee").innerHTML = shipped.map((p) => mqItem(p, false)).join("") + shipped.map((p) => mqItem(p, true)).join("");
 
   // ---------- Stats ----------
   const jobCount = d.experience.filter((e) => !isEdu(e) && !/freelance/i.test(e.title)).length;
@@ -90,7 +91,7 @@
   // ---------- About + skills ----------
   $("aboutText").innerHTML = d.about.map((p) => `<p>${esc(p)}</p>`).join("");
   $("skills").innerHTML = Object.entries(d.skills).map(([g, items]) => `
-    <div class="skill-group"><h5>${esc(g)}</h5>
+    <div class="skill-group"><h3>${esc(g)}</h3>
       <div class="slots">${items.map((s) => `<span class="slot">${esc(s)}</span>`).join("")}</div>
     </div>`).join("");
 
@@ -104,16 +105,17 @@
     }).join("");
   }
   function cardHTML(p, i) {
+    const alt = p.alt || `${p.title} project by Sachin Korde, Unity game developer`;
     const thumb = p.image
-      ? `<img class="cover" src="${esc(p.image)}" alt="${esc(p.title)}" loading="lazy" referrerpolicy="no-referrer" />`
+      ? `<img class="cover" src="${esc(p.image)}" alt="${esc(alt)}" width="640" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer" />`
       : p.icon
-      ? `<img class="app-icon" src="${esc(p.icon)}" alt="${esc(p.title)} icon" loading="lazy" referrerpolicy="no-referrer" />`
-      : `<span class="glyph">${esc(p.title.charAt(0))}</span>`;
+      ? `<img class="app-icon" src="${esc(p.icon)}" alt="${esc(alt)}" width="96" height="96" loading="lazy" decoding="async" referrerpolicy="no-referrer" />`
+      : `<span class="glyph" aria-hidden="true">${esc(p.title.charAt(0))}</span>`;
     const isPlay = /play\.google\.com/.test(p.link || "");
     const label = p.linkLabel || (isPlay ? "▶ Google Play" : "Live");
     const links = [
-      p.link && `<a class="${isPlay ? "play" : ""}" href="${esc(p.link)}" target="_blank" rel="noopener">${esc(label)} ↗</a>`,
-      p.repo && `<a href="${esc(p.repo)}" target="_blank" rel="noopener">Code ↗</a>`,
+      p.link && `<a class="${isPlay ? "play" : ""}" href="${esc(p.link)}" target="_blank" rel="noopener" aria-label="${esc(short(p.title))}: ${esc(isPlay ? "open on Google Play" : label)} (opens in a new tab)">${esc(label)} ↗</a>`,
+      p.repo && `<a href="${esc(p.repo)}" target="_blank" rel="noopener" aria-label="${esc(short(p.title))} source code (opens in a new tab)">Code ↗</a>`,
     ].filter(Boolean).join("");
     const long = (p.description || "").length > 200;
     return `
@@ -121,7 +123,7 @@
         <div class="card-thumb">${thumb}<span class="lvl-badge">LVL ${String(i + 1).padStart(2, "0")}</span></div>
         <div class="card-body">
           ${p.org ? `<span class="card-org">${esc(p.org)}</span>` : ""}
-          <h4>${esc(p.title)}</h4>
+          <h3>${esc(p.title)}</h3>
           <p>${esc(p.description)}</p>
           ${long ? `<button class="more" type="button">+ read more</button>` : ""}
           <div class="chips">${(p.tags || []).map((t) => `<span class="chip">${esc(t)}</span>`).join("")}</div>
