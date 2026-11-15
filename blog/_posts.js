@@ -247,9 +247,9 @@ module.exports = [
 
   {
     slug: "real-time-multiplayer-card-casino-games-unity",
-    title: "Building Real-Time Multiplayer Card & Casino Games: Rummy, Bingo and More",
-    seoTitle: "Multiplayer Card Game Developer India: Rummy, Bingo, Casino Games | Sachin Korde",
-    description: "My experience building real-time multiplayer card and casino-style games such as Rummy, Bingo, Roulette and dice games with sockets, server-synced rounds and fair results.",
+    title: "Building Real-Time Card & Casino Games: Multiplayer Rummy, Bingo and More",
+    seoTitle: "Rummy & Card Game Developer India: Multiplayer Rummy, Bingo, Casino | Sachin Korde",
+    description: "My experience building real-time games for clients: multiplayer Rummy and card games, a live Bingo number game with server-synced rounds, and casino-style games using sockets.",
     keywords: ["Rummy game developer", "multiplayer card game developer India", "casino game developer", "Bingo game development", "Unity multiplayer", "socket programming games", "freelance game developer Pune"],
     company: "Freelance & client projects",
     period: "",
@@ -257,11 +257,11 @@ module.exports = [
     image: "https://sachinkorde.github.io/portfolio/og-image.png",
     links: [],
     body: [
-      ["p", "Real-time multiplayer games are some of the most demanding projects a game developer can take on. Every player must see the same game state at the same moment, and every result has to be trusted. I've built **multiplayer card and casino-style games** for clients, including **Rummy**, **Bingo** and a suite of casino games."],
+      ["p", "Real-time multiplayer games are some of the most demanding projects a game developer can take on. Every player must see the same game state at the same moment, and every result has to be trusted. I've built real-time card and casino-style games for clients: **multiplayer Rummy** and card games, a live **Bingo** number game, and a suite of casino games."],
       ["h2", "Casino Game Suite: five games in one app"],
       ["p", "One project combined five casino-style games in a single app: **Roulette Fun, Roulette 100, Lucky7 Dice Roll, Sic Bo Dice Roll and Fun Target**. Each had its own gameplay and rich animations, all connected in real time through **socket connections**."],
       ["h2", "A live number game with 60-second rounds"],
-      ["p", "I also worked on a live number game with a new round every 60 seconds. Rounds run on the **server clock**, so every player everywhere sees the same countdown and the same result at the same moment, and results are **provably fair**: the outcome is locked in before betting opens and can be checked afterwards."],
+      ["p", "I also worked on a live number game with a new round every 60 seconds. It's a single-player game, but rounds run on the **server clock**, so the countdown and results always come from the server rather than the device, and results are **provably fair**: the outcome is locked in before betting opens and can be checked afterwards."],
       ["h2", "What makes multiplayer card games hard"],
       ["ul", [
         "**One source of truth.** The server must own the game state; clients only display it. Otherwise players can see different tables.",
@@ -296,7 +296,7 @@ module.exports = [
         "**Aquila DPT**: 3D replicas of drilling equipment for a real-time oil and gas testing platform. [Read the case study](digital-pressure-testing-unity-3d-oil-gas-digital-twin.html)",
         "**Cadaviz**: a new section in a virtual dissection table used by medical colleges. [Read the case study](cadaviz-virtual-dissection-table-unity-developer.html)",
         "**LiveOps**: a Diwali festival event for Cooking Super Star and World Of Carrom. [Read the case study](diwali-liveops-event-unity-cooking-super-star-world-of-carrom.html)",
-        "**Multiplayer**: Rummy, Bingo and casino-style games. [Read the case study](real-time-multiplayer-card-casino-games-unity.html)",
+        "**Real-time card & casino games**: multiplayer Rummy, a live Bingo number game and casino-style games. [Read the case study](real-time-multiplayer-card-casino-games-unity.html)",
       ]],
       ["h2", "Skills"],
       ["p", "Unity 3D and 2D, C#, object-oriented design, game physics, animation (including Spine), level design, performance optimization, REST API integration, OTP authentication, Addressables, localization, AR/VR, real-time multiplayer with sockets, Blender 3D modeling, and web (JavaScript, ReactJS, PHP)."],

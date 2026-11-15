@@ -13,7 +13,7 @@ const PORTFOLIO = {
     "Unity game developer in Pune, India. I build 2D & 3D mobile games, real-time multiplayer card & casino games, AR/VR apps and interactive simulations with Unity and C#.",
   location: "Pune, Maharashtra, India",
   email: "sachinkorde1993@gmail.com",
-  resumeFile: "assets/Sachin_Korde_Resume.pdf?v=5",
+  resumeFile: "assets/Sachin_Korde_Resume.pdf?v=6",
 
   socials: [
     { label: "LinkedIn", url: "https://www.linkedin.com/in/sachinkorde/" },
@@ -22,7 +22,7 @@ const PORTFOLIO = {
 
   about: [
     "I'm a Unity game developer based in Pune, Maharashtra, with 5+ years of experience creating engaging 2D and 3D experiences. I'm available for full-time roles, freelance projects and remote work. I work mainly in Unity and C#, with a strong focus on game physics, animation, level design and clean object-oriented code.",
-    "I've built mixed-reality games and AR apps, educational games that help toddlers with early literacy, Unity-based simulation software for the energy industry, and, as a freelancer, real-time multiplayer Rummy, Bingo, casino and card games. I enjoy working with cross-functional teams — integrating APIs, authentication and reporting — to ship polished products on mobile, web and desktop.",
+    "I've built mixed-reality games and AR apps, educational games that help toddlers with early literacy, Unity-based simulation software for the energy industry, and, as a freelancer, real-time games such as multiplayer Rummy and card games, a live Bingo number game and casino games. I enjoy working with cross-functional teams — integrating APIs, authentication and reporting — to ship polished products on mobile, web and desktop.",
   ],
 
   skills: {
@@ -40,8 +40,9 @@ const PORTFOLIO = {
       company: "Freelance",
       org: "Freelance",
       description:
-        "A live multiplayer number game with a new round every 60 seconds. Rounds run on the server clock so every player sees the same countdown and result at the same moment, and outcomes are provably fair using a SHA-256 commit-reveal scheme. Includes a wallet with a full transaction ledger, referrals and KYC-verified withdrawals.",
-      tags: ["Multiplayer", "Real-time", "Android", "Backend"],
+        "A live real-time number game with a new round every 60 seconds. Rounds run on the server clock, so timing and results always come from the server, and outcomes are provably fair using a SHA-256 commit-reveal scheme. Includes a wallet with a full transaction ledger, referrals and KYC-verified withdrawals.",
+      tags: ["Real-time", "Provably Fair", "Android", "Backend"],
+      image: "assets/real-bingo-logo.svg",
       link: "https://bingo-backend-bjqq.onrender.com/",
       linkLabel: "Website",
       repo: "",
@@ -237,7 +238,7 @@ const PORTFOLIO = {
       org: "Independent",
       period: "Freelance", // TODO: add years, e.g. "2023 — Present"
       points: [
-        "Build real-time multiplayer games for clients, including Rummy, Bingo, casino and card games.",
+        "Build real-time games for clients, including multiplayer Rummy and card games, a live Bingo number game and casino games.",
         "Worked on The Real Bingo, a live 60-second-round number game with server-synced rounds and provably fair results.",
       ],
     },
