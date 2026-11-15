@@ -1,3 +1,7 @@
+/* Self-hosted fonts (OFL licensed): Chakra Petch, Inter, JetBrains Mono. Latin subset. */
+@font-face { font-family: "Chakra Petch"; font-style: normal; font-weight: 500 700; font-display: swap; src: url("../assets/fonts/chakra-petch-700.woff2") format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Inter"; font-style: normal; font-weight: 400 600; font-display: swap; src: url("../assets/fonts/inter-var.woff2") format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "JetBrains Mono"; font-style: normal; font-weight: 400 600; font-display: swap; src: url("../assets/fonts/jetbrains-mono-var.woff2") format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
 :root {
   --bg: #070a14;
   --bg-2: #0b1020;
@@ -217,9 +221,11 @@ body.no-webgl .hero { background: radial-gradient(circle at 70% 40%, rgba(168,85
 .carousel-wrap { position: relative; }
 .carousel {
   display: grid; grid-auto-flow: column; grid-auto-columns: minmax(300px, 360px); gap: 20px;
-  overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; padding: 10px 4px 24px; scrollbar-width: none;
+  overflow-x: auto; scroll-padding-inline: 4px; scroll-behavior: smooth; padding: 10px 4px 24px; scrollbar-width: none;
 }
 .carousel::-webkit-scrollbar { display: none; }
+/* snap is enabled on first interaction (see main.js): snapping during page load counts as a scroll and stops LCP measurement */
+.carousel.snap { scroll-snap-type: x mandatory; }
 .car-btn {
   position: absolute; top: 45%; z-index: 3; width: 46px; height: 46px; border-radius: 12px; cursor: pointer;
   background: rgba(16, 22, 42, .9); border: 1px solid var(--border); color: var(--text); font-size: 1.6rem; line-height: 1;
@@ -418,7 +424,7 @@ body.webgl-ready button.hero-hint { background: transparent; border-color: trans
 .hero-content > * { animation: fadeUp .7s cubic-bezier(.2,.7,.2,1) both; }
 .hero-content > *:nth-child(2) { animation-delay: .06s; } .hero-content > *:nth-child(3) { animation-delay: .12s; }
 .hero-content > *:nth-child(4) { animation-delay: .18s; } .hero-content > *:nth-child(5) { animation-delay: .24s; }
-@keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } }
+@keyframes fadeUp { from { transform: translateY(18px); } } /* no opacity: hidden text cannot count as LCP */
 .hire-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 28px auto 6px; max-width: 760px; text-align: left; }
 .hire-item { display: flex; flex-direction: column; gap: 4px; padding: 16px; border-radius: 14px; background: rgba(255,255,255,.035); border: 1px solid var(--border); }
 .hire-item b { font-family: var(--display); font-size: 1.1rem; }

@@ -25,9 +25,8 @@
 
   // ---------- Basic info ----------
   const initials = d.name.split(" ").map((w) => w[0]).join("").slice(0, 2).toUpperCase();
-  $("heroName").textContent = d.name;
-  $("heroName").dataset.text = d.name;
-  $("heroTagline").textContent = d.tagline;
+  // Hero name + tagline are already in the HTML. Don't rewrite them on load:
+  // changing the main above-the-fold text stops Chrome from measuring LCP.
   $("avatarInitials").textContent = initials;
   $("profileName").textContent = d.name;
   $("profileRole").textContent = d.role;
@@ -42,12 +41,19 @@
     ...d.socials.map((s) => `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label)} ↗</a>`),
   ].join("");
 
-  // ---------- Typed roles ----------
-  (function typed() {
+  // Start decorative hero effects only after the page has fully loaded,
+  // so the first paint stays stable (good LCP / Speed Index).
+  const afterLoad = (fn, delay) => {
+    const go = () => setTimeout(fn, delay);
+    document.readyState === "complete" ? go() : addEventListener("load", go, { once: true });
+  };
+
+  // ---------- Typed roles (starts with the first role already shown) ----------
+  afterLoad(function typed() {
     const el = $("typed");
     const roles = d.roles && d.roles.length ? d.roles : [d.role];
-    if (reduceMotion) { el.textContent = roles[0]; return; }
-    let r = 0, i = 0, del = false;
+    if (reduceMotion) return;
+    let r = 0, i = roles[0].length, del = true;
     (function loop() {
       const word = roles[r];
       el.textContent = word.slice(0, i);
@@ -57,13 +63,13 @@
       else { del = false; r = (r + 1) % roles.length; }
       setTimeout(loop, del ? 35 : 75);
     })();
-  })();
+  }, 2500);
 
   // ---------- Glitch title ----------
-  if (!reduceMotion) {
+  if (!reduceMotion) afterLoad(() => {
     const h = $("heroName");
     setInterval(() => { h.classList.add("glitching"); setTimeout(() => h.classList.remove("glitching"), 180); }, 3800);
-  }
+  }, 3000);
 
   // ---------- Company helpers ----------
   const companies = [];
@@ -136,7 +142,7 @@
   function renderCards() {
     const list = activeTab === "All" ? d.projects : d.projects.filter((p) => (p.company || "Other") === activeTab);
     car.innerHTML = list.map(cardHTML).join("");
-    car.scrollLeft = 0;
+    if (car.scrollLeft) car.scrollLeft = 0;
     bindTilt();
     requestAnimationFrame(updateCar); // read layout after the browser has painted (avoids forced reflow)
   }
@@ -166,6 +172,10 @@
     bar.style.marginLeft = (max > 0 ? (car.scrollLeft / max) * (100 - vis * 100) : 0) + "%";
   }
   car.addEventListener("scroll", updateCar, { passive: true });
+  // Enable scroll-snap only once the visitor interacts with the carousel
+  const enableSnap = () => car.classList.add("snap");
+  ["pointerdown", "touchstart", "wheel", "keydown", "focusin"].forEach((ev) => car.addEventListener(ev, enableSnap, { once: true, passive: true }));
+  ["carPrev", "carNext"].forEach((id) => $(id).addEventListener("click", enableSnap, { once: true }));
   addEventListener("resize", updateCar);
   const page = (dir) => car.scrollBy({ left: dir * car.clientWidth * 0.85, behavior: reduceMotion ? "auto" : "smooth" });
   $("carPrev").addEventListener("click", () => page(-1));
