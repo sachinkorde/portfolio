@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sachin Korde — Unity Game Developer</title>
+  <meta name="description" content="Sachin Korde — Unity 3D & Game Developer. TMKOC games, Kiddopia, AR/VR, multiplayer card & casino games." />
+  <meta name="theme-color" content="#070a14" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Boot / loading screen -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader-inner">
+      <div class="loader-logo" id="loaderLogo">SK</div>
+      <div class="loader-bar"><span id="loaderFill"></span></div>
+      <div class="loader-text mono"><span id="loaderMsg">Loading assets</span> <span id="loaderPct">0%</span></div>
+    </div>
+  </div>
+
+  <!-- HUD navigation -->
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="#hero" class="logo" id="logo"><span class="logo-mark">SK</span><span class="logo-text">Sachin.Korde</span></a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#profile" data-k="01">Profile</a>
+        <a href="#levels" data-k="02">Projects</a>
+        <a href="#quest" data-k="03">Experience</a>
+        <a href="#contact" data-k="04">Contact</a>
+      </nav>
+      <a href="#" class="btn btn-sm btn-neon resume-link" download>Resume ↓</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO: playable 3D scene -->
+    <section class="hero" id="hero">
+      <canvas id="gameCanvas" aria-label="Interactive 3D mini-game: steer a spaceship to collect coins"></canvas>
+      <div class="hero-vignette"></div>
+
+      <div class="hud hud-tl mono">
+        <div>SCORE <b id="hudScore">0000</b></div>
+        <div>BEST <b id="hudBest">0000</b> <span class="combo" id="hudCombo">x1</span></div>
+      </div>
+      <div class="hud hud-tr mono">
+        <div>CLASS <b>UNITY DEV</b></div>
+        <div>XP <b id="hudXp">5+ YRS</b></div>
+      </div>
+
+      <div class="hero-content">
+        <p class="eyebrow mono"><span class="blink">▶</span> PLAYER 1 READY</p>
+        <h1 class="glitch" id="heroName" data-text="Sachin Korde">Sachin Korde</h1>
+        <h2 class="hero-role"><span id="typed">Unity 3D Developer</span><span class="caret">_</span></h2>
+        <p class="hero-tagline" id="heroTagline"></p>
+        <div class="hero-cta">
+          <a href="#levels" class="btn btn-primary">▶ Press Start</a>
+          <a href="#" class="btn btn-ghost resume-link" download>Download Resume</a>
+        </div>
+      </div>
+
+      <div class="hero-hint mono"><span class="mouse"></span> Move your mouse / drag to fly · collect <b class="gold">coins</b> · dodge rocks</div>
+    </section>
+
+    <!-- Shipped games marquee -->
+    <section class="shipped" aria-label="Games I've worked on">
+      <div class="shipped-label mono">SHIPPED ON GOOGLE PLAY</div>
+      <div class="marquee"><div class="marquee-track" id="marquee"></div></div>
+    </section>
+
+    <!-- PROFILE -->
+    <section class="section" id="profile">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-k mono">01 // PLAYER PROFILE</span>
+          <h3>Who's playing?</h3>
+        </div>
+        <div class="profile-grid">
+          <article class="panel profile-card reveal">
+            <div class="avatar"><span id="avatarInitials">SK</span></div>
+            <div class="profile-meta">
+              <h4 id="profileName">Sachin Korde</h4>
+              <p class="mono muted" id="profileRole">Unity 3D Developer</p>
+              <p class="mono muted small" id="profileLoc"></p>
+            </div>
+            <div class="stats" id="stats"></div>
+            <div class="about" id="aboutText"></div>
+          </article>
+
+          <article class="panel inventory reveal">
+            <div class="panel-title mono">INVENTORY / SKILLS</div>
+            <div id="skills"></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS: level select -->
+    <section class="section" id="levels">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-k mono">02 // LEVEL SELECT</span>
+          <h3>Projects &amp; games</h3>
+          <p class="muted">Pick a company to filter. Scroll sideways or use the arrows.</p>
+        </div>
+        <div class="tabs" id="tabs" role="tablist"></div>
+        <div class="carousel-wrap">
+          <button class="car-btn prev" id="carPrev" aria-label="Previous projects">‹</button>
+          <div class="carousel" id="carousel"></div>
+          <button class="car-btn next" id="carNext" aria-label="Next projects">›</button>
+        </div>
+        <div class="car-progress"><span id="carProgress"></span></div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE: quest log -->
+    <section class="section" id="quest">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-k mono">03 // QUEST LOG</span>
+          <h3>Career journey</h3>
+          <p class="muted">Every company is a level cleared. Tap one to open it.</p>
+        </div>
+        <div class="quest" id="questList"></div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact" id="contact">
+      <div class="container">
+        <div class="contact-card panel reveal">
+          <span class="section-k mono">04 // PLAYER 2 — JOIN?</span>
+          <h3 class="contact-title">Let's build your<br /><span class="grad">next hit game.</span></h3>
+          <p class="muted">Open to Unity / game developer roles and exciting projects. Insert coin to continue.</p>
+          <div class="hero-cta center">
+            <a href="#" class="btn btn-primary" id="emailBtn">✉ Say hello</a>
+            <a href="#" class="btn btn-ghost resume-link" download>Download Resume</a>
+          </div>
+          <div class="socials" id="socials"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer mono">
+    <p>© <span id="year"></span> <span id="footerName"></span> · GAME OVER? <a href="#hero">PLAY AGAIN ↑</a></p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script type="module" src="js/scene.js"></script>
+</body>
+</html>
