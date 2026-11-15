@@ -7,7 +7,158 @@
 
 const PLAY = (id) => `https://play.google.com/store/apps/details?id=${id}`;
 
+const SITE = "https://sachinkorde.github.io/portfolio/";
+
 module.exports = [
+  // ---------------- PUNE LANDING / GUIDE PAGES ----------------
+  {
+    slug: "game-developer-pune",
+    kind: "Services",
+    service: "Unity game development in Pune",
+    title: "Game Developer in Pune: Unity, Mobile, AR/VR & Multiplayer Game Development",
+    seoTitle: "Game Developer in Pune | Unity Game Development Services | Sachin Korde",
+    description: "Looking for a game developer in Pune? I'm Sachin Korde, a Unity game developer with 5+ years of experience in mobile games, kids learning games, AR/VR and multiplayer card games. Available full-time, freelance and remote.",
+    keywords: ["game developer Pune", "game development Pune", "Unity developer Pune", "Unity game development Pune", "mobile game developer Pune", "hire game developer Pune", "AR VR developer Pune", "freelance game developer Pune", "game development services Pune"],
+    company: "Pune, Maharashtra",
+    period: "",
+    tags: ["Pune", "Game Development", "Unity", "Mobile Games", "AR/VR", "Freelance"],
+    image: SITE + "og-image.png",
+    links: [{ label: "Download my resume (PDF)", url: SITE + "assets/Sachin_Korde_Resume.pdf" }],
+    body: [
+      ["p", "If you're searching for a **game developer in Pune**, you're probably a studio that needs another Unity developer, a startup with a game idea, or a business that wants a game, an AR experience or an interactive 3D app. I'm **Sachin Korde**, a **Unity game developer based in Pune, Maharashtra**, and I've spent 5+ years shipping exactly those kinds of projects."],
+      ["h2", "Game development services I offer in Pune"],
+      ["ul", [
+        "**Mobile game development (Android)**: 2D and 3D games in Unity, from first prototype to release.",
+        "**Kids and educational games**: I've built learning games for [TMKOC Playschool](tmkoc-playschool-unity-kids-learning-app-case-study.html) and [Kiddopia](kiddopia-k-man-flying-pathpuzzle-unity-2d-spine.html).",
+        "**Casual, puzzle and endless runner games**: gameplay, levels, animation and polish.",
+        "**Card, board and casino-style games**: including multiplayer Rummy and real-time games. [Read more](real-time-multiplayer-card-casino-games-unity.html)",
+        "**LiveOps and events** for live games: festival events, new levels and UI animation. [Read more](diwali-liveops-event-unity-cooking-super-star-world-of-carrom.html)",
+        "**Game optimization**: fixing lag and making animations smooth on real phones. [Read more](tmkoc-games-unity-performance-optimization.html)",
+        "**AR and VR development**: AR learning apps and VR experiences. [Read more](augment-works-web-developer-to-unity-ar-vr-developer.html)",
+        "**Real-time 3D for industry and healthcare**: Unity simulations like [DPT](digital-pressure-testing-unity-3d-oil-gas-digital-twin.html) and [Cadaviz](cadaviz-virtual-dissection-table-unity-developer.html).",
+      ]],
+      ["h2", "Games and apps I've worked on"],
+      ["p", "My work includes official games for **TMKOC (Taarak Mehta Ka Ooltah Chashmah)**, India's No. 1 TV serial, such as TMKOC Playschool, Run Jetha Run, Match & Merge and Hungry Goli; games for **Kiddopia**; a Diwali event for **Cooking Super Star** and **World Of Carrom**; the **Cadaviz** virtual dissection table; and **Aquila's Digital Pressure Testing** platform. See the [full list of my gaming projects](gaming-projects-pune-unity-developer.html)."],
+      ["h2", "Why work with a Pune-based game developer?"],
+      ["ul", [
+        "**Same city, same time zone**: easy to meet in person, join your office or sit with your designers and artists.",
+        "**Full-time or freelance**: I'm open to full-time roles at game studios and companies in Pune, as well as freelance and contract work.",
+        "**Remote-ready**: if your team is outside Pune, I work remotely too.",
+      ]],
+      ["p", "I'm available for studios, startups and businesses across Pune, including Hinjewadi, Baner, Wakad, Kharadi, Viman Nagar, Magarpatta and Pimpri-Chinchwad, and for remote teams anywhere in India."],
+      ["h2", "Frequently asked questions"],
+      ["faq", [
+        ["Are you available for full-time game developer jobs in Pune?", "Yes. I'm open to full-time Unity / game developer roles at studios and companies in Pune, and to remote roles."],
+        ["Do you take freelance game development projects?", "Yes. I take freelance and contract projects: new mobile games, kids learning games, card and casino-style games, AR/VR apps, and feature work or optimization on existing Unity projects."],
+        ["Which game engine do you use?", "I work mainly in **Unity** with **C#**, for both 2D and 3D. I also use Spine for 2D animation and Blender for 3D models."],
+        ["Can you work on an existing Unity game?", "Yes. I've optimized and polished live games (Run Jetha Run, Match & Merge, Hungry Goli), added events and levels to live games, and added a new section to a large existing codebase (Cadaviz)."],
+        ["Do you build multiplayer games?", "Yes. I've built real-time multiplayer card games such as Rummy, using socket programming and server-synced game state."],
+        ["How do I contact you?", "Email [sachinkorde1993@gmail.com](mailto:sachinkorde1993@gmail.com), call [+91 99709 90595](tel:+919970990595), or message me on [LinkedIn](https://www.linkedin.com/in/sachinkorde/)."],
+      ]],
+    ],
+  },
+
+  {
+    slug: "gaming-projects-pune-unity-developer",
+    kind: "Portfolio",
+    title: "Gaming Projects by a Pune Game Developer: Unity Mobile, Kids, AR/VR and Multiplayer Games",
+    seoTitle: "Gaming Projects in Pune | Unity Game Portfolio | Sachin Korde",
+    description: "A complete list of gaming projects I've worked on as a Unity game developer in Pune: TMKOC games, Kiddopia, LiveOps events, AR/VR apps, multiplayer card games and real-time 3D simulations.",
+    keywords: ["gaming projects Pune", "game projects Pune", "Unity projects Pune", "game developer portfolio Pune", "mobile game projects India", "TMKOC games", "Kiddopia games"],
+    company: "Sachin Korde",
+    period: "",
+    tags: ["Pune", "Gaming Projects", "Unity", "Portfolio"],
+    image: SITE + "og-image.png",
+    links: [{ label: "Play 10 mini-games on my portfolio", url: SITE + "#arcade" }],
+    body: [
+      ["p", "Here's every gaming project I've worked on as a **Unity game developer from Pune**, grouped by type. Each one links to a detailed case study where I explain what I built and what I learned."],
+      ["h2", "Mobile games for TMKOC (India's No. 1 TV serial)"],
+      ["ul", [
+        "**TMKOC Playschool Kids Learning**: built from scratch, with registration, dashboard, REST APIs, Addressables, localization and learning mini-games. [Case study](tmkoc-playschool-unity-kids-learning-app-case-study.html)",
+        "**Run Jetha Run**: an endless runner I optimized, with smoother animations and new 3D models. [Case study](tmkoc-games-unity-performance-optimization.html)",
+        "**Match & Merge: TMKOC Puzzle**: animation improvements and optimization.",
+        "**Hungry Goli**: final polish and optimization before release.",
+      ]],
+      ["h2", "Kids learning games for Kiddopia"],
+      ["ul", [
+        "**K-Man Flying**: an endless space-flying game built from scratch, with Spine animations. [Case study](kiddopia-k-man-flying-pathpuzzle-unity-2d-spine.html)",
+        "**PathPuzzle**: a new game for Kiddopia's Puzzles section.",
+        "**ABCD Tracing, Paint, Cooking Master, Balloon Pop and Find Correct Word**: learning games for toddlers.",
+      ]],
+      ["h2", "Live games and LiveOps events"],
+      ["ul", ["**Cooking Super Star – Tasty City** and **World Of Carrom: 3D Board Game**: a Diwali festival event, new levels and animated popups. [Case study](diwali-liveops-event-unity-cooking-super-star-world-of-carrom.html)"]],
+      ["h2", "Card, casino and real-time games"],
+      ["ul", [
+        "**Multiplayer Rummy and card games** for clients, built with sockets and server-synced game state. [Case study](real-time-multiplayer-card-casino-games-unity.html)",
+        "**Casino Game Suite**: Roulette Fun, Roulette 100, Lucky7 Dice Roll, Sic Bo Dice Roll and Fun Target in one app.",
+        "**The Real Bingo**: a live number game with 60-second server-synced rounds.",
+      ]],
+      ["h2", "AR, VR and real-time 3D"],
+      ["ul", [
+        "**Magic Joey**: AR learning cards for kids, built with Augment Works in Pune. [Case study](augment-works-web-developer-to-unity-ar-vr-developer.html)",
+        "**Human Anatomy AR** and an **industrial VR** project.",
+        "**Cadaviz**: a new section for a virtual human dissection table. [Case study](cadaviz-virtual-dissection-table-unity-developer.html)",
+        "**Digital Pressure Testing (DPT)**: 3D drilling-equipment replicas tested with real-time data. [Case study](digital-pressure-testing-unity-3d-oil-gas-digital-twin.html)",
+      ]],
+      ["h2", "Want to add your game to this list?"],
+      ["p", "I'm a game developer in Pune available for full-time, freelance and remote work. [See my game development services](game-developer-pune.html) or [get in touch](" + SITE + "#contact)."],
+    ],
+  },
+
+  {
+    slug: "game-development-company-pune-vs-freelance-unity-developer",
+    kind: "Guide",
+    title: "Game Development Company in Pune or a Freelance Unity Developer? How to Choose",
+    seoTitle: "Game Development Company in Pune vs Freelance Developer | How to Choose",
+    description: "Comparing game development companies in Pune with hiring a freelance Unity developer? A practical guide from a Pune game developer: when each makes sense, what to ask, and red flags to avoid.",
+    keywords: ["game development company Pune", "gaming companies in Pune", "game studio Pune", "hire game developer Pune", "freelance Unity developer Pune", "mobile game development company Pune", "outsource game development India"],
+    company: "Guide for businesses",
+    period: "",
+    tags: ["Pune", "Hiring", "Game Studios", "Freelance", "Guide"],
+    image: SITE + "og-image.png",
+    links: [],
+    body: [
+      ["p", "If you're searching for **gaming companies in Pune** or a **game development company in Pune**, you probably have a game to build and want the right team for it. Pune has a growing gaming and tech scene, and you can work with a full studio, a small agency or a freelance developer. As a game developer in Pune myself, here's an honest guide to choosing."],
+      ["h2", "When a game development company makes sense"],
+      ["ul", [
+        "**Big scope**: you need a full team of programmers, artists, designers, QA and producers working together for many months.",
+        "**Lots of original art**: characters, environments and animation produced in-house.",
+        "**One contract for everything**: you want a single company responsible for design, development, testing and launch.",
+      ]],
+      ["h2", "When a freelance Unity developer makes sense"],
+      ["ul", [
+        "**A prototype or MVP**: you want to test a game idea quickly before investing more.",
+        "**Feature work on an existing game**: new levels, events, UI, or a new game mode.",
+        "**Optimization and polish**: your game lags or its animations feel rough on real phones.",
+        "**A specific skill**: AR/VR, multiplayer card games, kids learning games or Unity–API integration.",
+        "**Extra hands for your studio**: a developer who can join your team and get up to speed fast.",
+      ]],
+      ["h2", "Questions to ask any studio or developer"],
+      ["ul", [
+        "**What have you shipped?** Ask for Play Store or App Store links, not just screenshots.",
+        "**What exactly was your role?** \"Worked on\" can mean anything; ask what they personally built.",
+        "**Who owns the source code?** Make sure you get the full Unity project at the end.",
+        "**How will we communicate?** Agree on weekly builds or demos so you always see progress.",
+        "**How do you test on real devices?** Mobile games must be tested on low-end phones too, not just in the editor.",
+      ]],
+      ["h2", "Red flags to watch for"],
+      ["ul", [
+        "No live games or demos to show.",
+        "Vague answers about who will actually write the code.",
+        "No plan for testing, bug fixing or post-launch updates.",
+      ]],
+      ["h2", "Where I fit in"],
+      ["p", "I'm **Sachin Korde**, a **Unity game developer in Pune** with 5+ years of experience. I've worked on official TMKOC games, Kiddopia, LiveOps events, AR/VR apps and multiplayer card games. I'm available for **full-time roles**, **freelance projects** and **contract work**, and I'm happy to give an honest opinion on whether your project needs a full studio or a developer like me. [See my services](game-developer-pune.html) or [view my gaming projects](gaming-projects-pune-unity-developer.html)."],
+      ["h2", "Frequently asked questions"],
+      ["faq", [
+        ["Is Pune a good city for game development?", "Yes. Pune has a strong IT and engineering talent pool and a growing community of game developers, studios and startups, so it's a good place to find people for game projects."],
+        ["Should I hire a game studio or a freelancer for my first game?", "For a first game or prototype, a freelancer or a small team is often enough to validate the idea. A full studio makes more sense once the scope, art needs and budget are larger."],
+        ["Can a freelance developer work with my in-house team in Pune?", "Yes. A Pune-based developer can join your office for meetings or work alongside your designers and artists, and also work remotely."],
+      ]],
+    ],
+  },
+
+  // ---------------- PROJECT CASE STUDIES ----------------
   {
     slug: "tmkoc-playschool-unity-kids-learning-app-case-study",
     title: "Case Study: Building TMKOC Playschool, a Kids Learning App in Unity",

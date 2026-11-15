@@ -51,6 +51,17 @@ img { display: block; max-width: 100%; }
 .b-hero img { width: 100%; height: auto; max-height: 360px; object-fit: contain; border-radius: 16px; border: 1px solid var(--border); background: radial-gradient(circle at 50% 120%, rgba(168,85,247,.35), transparent 60%), #0d1328; }
 .b-hero figcaption { margin-top: 8px; font-size: .74rem; color: var(--muted); }
 
+/* FAQ */
+.b-faq { display: grid; gap: 10px; margin: 6px 0 22px; }
+.b-faq details { border: 1px solid var(--border); border-radius: 12px; background: rgba(16,22,42,.7); padding: 0 18px; }
+.b-faq details[open] { border-color: rgba(34,211,238,.45); }
+.b-faq summary { cursor: pointer; list-style: none; padding: 14px 0; display: flex; justify-content: space-between; gap: 12px; align-items: center; }
+.b-faq summary::-webkit-details-marker { display: none; }
+.b-faq summary::after { content: "+"; color: var(--cyan); font: 700 1.3rem var(--display); transition: transform .2s; }
+.b-faq details[open] summary::after { transform: rotate(45deg); }
+.b-faq summary h3 { font: 600 1.02rem/1.4 "Inter", sans-serif; color: var(--text); margin: 0; }
+.b-faq details p { padding-bottom: 14px; margin: 0; }
+
 /* layout */
 .b-grid { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 48px; align-items: start; }
 .b-body { max-width: 720px; font-size: 1.06rem; color: var(--body); }

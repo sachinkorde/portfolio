@@ -31,6 +31,7 @@ function renderBody(blocks) {
     if (t === "p") return `<p>${inline(v)}</p>`;
     if (t === "ul") return `<ul>${v.map((li) => `<li>${inline(li)}</li>`).join("")}</ul>`;
     if (t === "quote") return `<blockquote>${inline(v)}</blockquote>`;
+    if (t === "faq") return `<div class="b-faq">${v.map(([q, a]) => `<details><summary><h3>${inline(q)}</h3></summary><p>${inline(a)}</p></details>`).join("")}</div>`;
     return "";
   }).join("\n      ");
 }
@@ -67,7 +68,7 @@ function head({ title, description, keywords, url, image, type, jsonld, extra = 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../css/blog.css?v=2" />
+  <link rel="stylesheet" href="../css/blog.css?v=3" />
   <script type="application/ld+json">${JSON.stringify(jsonld)}</script>
 </head>`;
 }
@@ -105,6 +106,9 @@ const IMG = {
   "diwali-liveops-event-unity-cooking-super-star-world-of-carrom": { alt: "Cooking Super Star Tasty City game icon, an AppOn mobile cooking game with a Diwali event" },
   "augment-works-web-developer-to-unity-ar-vr-developer": { alt: "Magic Joey logo, an augmented reality learning cards app for kids built in Unity" },
   "real-time-multiplayer-card-casino-games-unity": { src: SITE + "assets/projects/rummy-card-games.svg", alt: "Illustration of a multiplayer Rummy card game: playing cards on a green table with four players" },
+  "game-developer-pune": { alt: "Sachin Korde, game developer in Pune: Unity, mobile, AR/VR and multiplayer game development services" },
+  "gaming-projects-pune-unity-developer": { alt: "Gaming projects by Sachin Korde, a Unity game developer in Pune: TMKOC, Kiddopia, AR/VR and multiplayer games" },
+  "game-development-company-pune-vs-freelance-unity-developer": { alt: "Guide to choosing a game development company in Pune or a freelance Unity developer" },
   "hire-unity-game-developer-pune": { alt: "Sachin Korde, Unity game developer in Pune, available for hire: full-time and freelance" },
 };
 const imgOf = (p, small) => ({ src: ((IMG[p.slug] && IMG[p.slug].src) || p.image).replace(/=s512$/, small ? "=s256-rw" : "=s512-rw"), alt: (IMG[p.slug] && IMG[p.slug].alt) || `${p.title} - case study by Sachin Korde` });
@@ -129,10 +133,23 @@ posts.forEach((p, i) => {
         publisher: personRef,
         mainEntityOfPage: { "@type": "WebPage", "@id": url },
         keywords: p.keywords.join(", "),
-        articleSection: "Case Studies",
+        articleSection: p.kind || "Case Studies",
         inLanguage: "en-IN",
         wordCount: words(p),
       },
+      ...p.body.filter(([t]) => t === "faq").map(([, v]) => ({
+        "@type": "FAQPage",
+        mainEntity: v.map(([q, a]) => ({ "@type": "Question", name: plain(q), acceptedAnswer: { "@type": "Answer", text: plain(a) } })),
+      })),
+      ...(p.service ? [{
+        "@type": "Service",
+        name: p.service,
+        serviceType: "Game development",
+        provider: personRef,
+        areaServed: [{ "@type": "City", name: "Pune" }, { "@type": "State", name: "Maharashtra" }, { "@type": "Country", name: "India" }],
+        availableChannel: { "@type": "ServiceChannel", serviceUrl: url },
+        description: p.description,
+      }] : []),
       {
         "@type": "BreadcrumbList",
         itemListElement: [
@@ -149,10 +166,10 @@ posts.forEach((p, i) => {
   })}
 <body>${nav}
   <main class="b-wrap b-post">
-    <nav class="b-crumbs mono" aria-label="Breadcrumb"><a href="../">Portfolio</a> / <a href="./">Blog</a> / <span>Case study</span></nav>
+    <nav class="b-crumbs mono" aria-label="Breadcrumb"><a href="../">Portfolio</a> / <a href="./">Blog</a> / <span>${esc(p.kind || "Case study")}</span></nav>
     <article>
       <header class="b-head">
-        <p class="b-kicker mono">CASE STUDY · ${esc(p.company)}${p.period ? " · " + esc(p.period) : ""}</p>
+        <p class="b-kicker mono">${esc((p.kind || "Case study").toUpperCase())} · ${esc(p.company)}${p.period ? " · " + esc(p.period) : ""}</p>
         <h1>${esc(p.title)}</h1>
         <p class="b-lead">${esc(p.description)}</p>
         <div class="b-meta mono">
@@ -237,7 +254,7 @@ fs.writeFileSync(path.join(ROOT, "blog", "index.html"), `${head({
   <main class="b-wrap">
     <header class="b-head b-index-head">
       <p class="b-kicker mono">BLOG · CASE STUDIES</p>
-      <h1>Unity game development case studies</h1>
+      <h1>Game development in Pune: case studies &amp; guides</h1>
       <p class="b-lead">Real projects I've worked on as a Unity developer in Pune: what the project was, what I built, the problems I solved and what I learned. From official TMKOC games and Kiddopia to AR/VR, industrial 3D and multiplayer card games.</p>
     </header>
     <div class="b-cards b-cards-index">${posts.map((p) => card(p, "")).join("")}
@@ -307,7 +324,7 @@ const indexPath = path.join(ROOT, "index.html");
 let home = fs.readFileSync(indexPath, "utf8");
 const START = "<!-- BLOG:START -->", END = "<!-- BLOG:END -->";
 if (home.includes(START)) {
-  const cards = posts.slice(0, 6).map((p) => card(p, "blog/")).join("");
+  const cards = posts.filter((p) => !p.kind).slice(0, 6).map((p) => card(p, "blog/")).join("");
   home = home.replace(new RegExp(`${START}[\\s\\S]*?${END}`), `${START}${cards}\n        ${END}`);
 }
 const swap = (a, b, content) => {

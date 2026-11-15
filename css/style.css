@@ -536,6 +536,10 @@ body.modal-open { overflow: hidden; }
   .am-canvas { max-height: calc(100svh - 170px); }
 }
 
+.pune-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 20px; margin-top: 22px; font-size: .82rem; }
+.pune-links a { color: var(--cyan); border-bottom: 1px dashed rgba(34,211,238,.4); }
+.pune-links a:hover { border-bottom-style: solid; }
+
 /* project list shown only when JavaScript is off */
 .noscript-projects { list-style: none; display: grid; gap: 12px; margin-top: 20px; color: var(--muted); font-size: .9rem; }
 .noscript-projects li { display: flex; gap: 12px; align-items: flex-start; }
