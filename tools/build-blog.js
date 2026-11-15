@@ -110,6 +110,8 @@ const IMG = {
   "game-development-company-pune-vs-freelance-unity-developer": { alt: "Guide to choosing a game development company in Pune or a freelance Unity developer" },
   "hire-unity-game-developer-pune": { alt: "Sachin Korde, Unity game developer in Pune, available for hire: full-time and freelance" },
 };
+const localHero = (p) => fs.existsSync(path.join(ROOT, "assets", "blog", p.slug + ".webp")) ? "assets/blog/" + p.slug + ".webp" : null;
+const isSquare = (p) => /play-lh|Magic-Joey/.test(p.image);
 const imgOf = (p, small) => ({ src: ((IMG[p.slug] && IMG[p.slug].src) || p.image).replace(/=s512$/, small ? "=s256-rw" : "=s512-rw"), alt: (IMG[p.slug] && IMG[p.slug].alt) || `${p.title} - case study by Sachin Korde` });
 
 // ---------- Post pages ----------
@@ -161,7 +163,7 @@ posts.forEach((p, i) => {
   };
   const html = `${head({
     title: p.seoTitle, description: p.description, keywords: p.keywords.join(", "), url, image: p.image, type: "article", jsonld,
-    extra: `\n  <meta property="article:published_time" content="${DATE}" />\n  <meta property="article:author" content="${SITE}" />${p.tags.map((t) => `\n  <meta property="article:tag" content="${esc(t)}" />`).join("")}`,
+    extra: `${localHero(p) ? `\n  <link rel="preload" as="image" href="../${localHero(p)}" fetchpriority="high" />` : ""}\n  <meta property="article:published_time" content="${DATE}" />\n  <meta property="article:author" content="${SITE}" />${p.tags.map((t) => `\n  <meta property="article:tag" content="${esc(t)}" />`).join("")}`,
   })}
 <body>${nav}
   <main class="b-wrap b-post">
@@ -179,7 +181,7 @@ posts.forEach((p, i) => {
         <div class="b-tags">${p.tags.map((t) => `<span>${esc(t)}</span>`).join("")}</div>
       </header>
       <figure class="b-hero">
-        <img src="${hero.src}" alt="${esc(hero.alt)}" width="640" height="360" fetchpriority="high" decoding="async" referrerpolicy="no-referrer" />
+        <img src="${localHero(p) ? "../" + localHero(p) : hero.src}" alt="${esc(hero.alt)}" width="${isSquare(p) && localHero(p) ? 320 : 640}" height="${isSquare(p) && localHero(p) ? 320 : 360}" fetchpriority="high" referrerpolicy="no-referrer" />
         <figcaption class="mono">${esc(hero.alt)}</figcaption>
       </figure>
       <div class="b-grid">
@@ -221,7 +223,7 @@ posts.forEach((p, i) => {
 function card(q, prefix) {
   return `
         <a class="b-pcard" href="${prefix}${q.slug}.html">
-          <span class="b-pimg"><img src="${imgOf(q, true).src.replace(SITE, prefix ? "" : "../")}" alt="${esc(imgOf(q).alt)}" width="640" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer" /></span>
+          <span class="b-pimg"><img src="${localHero(q) ? (prefix ? "" : "../") + localHero(q) : imgOf(q, true).src.replace(SITE, prefix ? "" : "../")}" alt="${esc(imgOf(q).alt)}" width="640" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer" /></span>
           <span class="b-pbody">
             <span class="mono b-pk">${esc(q.company)}</span>
             <span class="b-pt">${esc(q.title)}</span>
