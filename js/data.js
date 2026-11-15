@@ -69,7 +69,7 @@ const PORTFOLIO = {
       description:
         "An e-learning app for kids based on Taarak Mehta Ka Ooltah Chashmah (TMKOC), India's No. 1 TV serial. Built from scratch: registration flow, student dashboard, API data fetch/display/update, server content downloads via Addressables, and localization. Also built the Paint, ABCD Tracing and Puzzle learning games inside the app.",
       tags: ["Unity", "C#", "REST API", "Addressables", "Localization"],
-      icon: "https://play-lh.googleusercontent.com/CajKjdg47A8vXsTcdW5kgBCX90SGUQux5InYjiseWUJbhPKjUawjxmH04Ka3_e5FGAGqw4VV-Bei34GbTea0Hg=s192-rw",
+      icon: "https://play-lh.googleusercontent.com/CajKjdg47A8vXsTcdW5kgBCX90SGUQux5InYjiseWUJbhPKjUawjxmH04Ka3_e5FGAGqw4VV-Bei34GbTea0Hg=s128-rw",
       link: "https://play.google.com/store/apps/details?id=com.neelamediatech.playschool",
       repo: "",
     },
@@ -81,7 +81,7 @@ const PORTFOLIO = {
       description:
         "An endless runner starring Jethalal from TMKOC, India's No. 1 TV serial. Optimized performance to remove lag, made animations smoother, and worked alongside the 3D modeler to update and create new 3D models.",
       tags: ["Unity 3D", "C#", "Optimization", "Animation"],
-      icon: "https://play-lh.googleusercontent.com/CaFU42VXHbxvxrNedzz7CBS-GvoNs7NV6l41ZQWGlGBZjJzCnVdGNhUTJeIBoCqU4FB0TvSOHWsd2txLqTWkHg=s192-rw",
+      icon: "https://play-lh.googleusercontent.com/CaFU42VXHbxvxrNedzz7CBS-GvoNs7NV6l41ZQWGlGBZjJzCnVdGNhUTJeIBoCqU4FB0TvSOHWsd2txLqTWkHg=s128-rw",
       link: "https://play.google.com/store/apps/details?id=com.tmkocplay.run.jetha.run",
       repo: "",
     },
@@ -93,7 +93,7 @@ const PORTFOLIO = {
       description:
         "A 2048-style match-and-merge puzzle game featuring TMKOC characters. Improved animations and optimized gameplay performance.",
       tags: ["Unity", "C#", "Optimization", "Animation"],
-      icon: "https://play-lh.googleusercontent.com/53xrjab7Mz0wKNx4UaSmoYvPyP0c42GfHX1FiBGwV-RuSWlrpUQwIFpFu6z2aVIfQw17zimu4D_TtOSIhzLgTw=s192-rw",
+      icon: "https://play-lh.googleusercontent.com/53xrjab7Mz0wKNx4UaSmoYvPyP0c42GfHX1FiBGwV-RuSWlrpUQwIFpFu6z2aVIfQw17zimu4D_TtOSIhzLgTw=s128-rw",
       link: "https://play.google.com/store/apps/details?id=com.neelamediatech.tmkoc2048matchpool",
       repo: "",
     },
@@ -105,7 +105,7 @@ const PORTFOLIO = {
       description:
         "A casual game starring Goli from TMKOC. Gave the game its final polish and performance optimization before release.",
       tags: ["Unity", "C#", "Optimization"],
-      icon: "https://play-lh.googleusercontent.com/d7PAWehJb7xZjSB_0qELxIQpHziiVaplf7lOLjFScXj1CZenmIDzf82IHuEpLOkyrlS3BM_FkDzPEbyfRfy-DQU=s192-rw",
+      icon: "https://play-lh.googleusercontent.com/d7PAWehJb7xZjSB_0qELxIQpHziiVaplf7lOLjFScXj1CZenmIDzf82IHuEpLOkyrlS3BM_FkDzPEbyfRfy-DQU=s128-rw",
       link: "https://play.google.com/store/apps/details?id=com.NeelaGames.HungryGoli",
       repo: "",
     },
@@ -117,7 +117,7 @@ const PORTFOLIO = {
       description:
         "A live cooking-simulation game. Built a limited-time Diwali festival event and added new levels, working closely with the game designer to improve the player experience, and created animated popups for a more polished UI.",
       tags: ["Unity", "C#", "LiveOps", "UI Animation"],
-      icon: "https://play-lh.googleusercontent.com/TzFRhSGgbEnxQlIvuOC4qbzf6hpKQ3P4FJckdlvYEdUm5l1d1iO0P47spy70yyUKgHAI0RHAVbGfqEHWrPEwWA=s192-rw",
+      icon: "https://play-lh.googleusercontent.com/TzFRhSGgbEnxQlIvuOC4qbzf6hpKQ3P4FJckdlvYEdUm5l1d1iO0P47spy70yyUKgHAI0RHAVbGfqEHWrPEwWA=s128-rw",
       link: "https://play.google.com/store/apps/details?id=com.appon.cookingstar",
       repo: "",
     },
@@ -129,7 +129,7 @@ const PORTFOLIO = {
       description:
         "A 3D carrom board game. Added a Diwali festival event and new content, worked with the game designer on gameplay improvements, and built animated popups for the UI.",
       tags: ["Unity 3D", "C#", "LiveOps", "UI Animation"],
-      icon: "https://play-lh.googleusercontent.com/5nfNn2k_P88pYpvlbiAte8zUeIpRYZ4UFohUsVQqd5MPARGZJc-TAtUujcvsFUQgc-Sv5oEAUgLpCHlnK7NE=s192-rw",
+      icon: "https://play-lh.googleusercontent.com/5nfNn2k_P88pYpvlbiAte8zUeIpRYZ4UFohUsVQqd5MPARGZJc-TAtUujcvsFUQgc-Sv5oEAUgLpCHlnK7NE=s128-rw",
       link: "https://play.google.com/store/apps/details?id=com.appon.carrom",
       repo: "",
     },
@@ -141,7 +141,7 @@ const PORTFOLIO = {
       description:
         "An endless space-flying game inside Kiddopia, a popular e-learning app for toddlers. Built from scratch: gameplay, responsive controls and performance optimization, with character animations created in Spine for smooth, lively 2D motion.",
       tags: ["Unity 2D", "C#", "Spine", "Animation"],
-      icon: "https://play-lh.googleusercontent.com/YpxTvsGH_q-7MEteIa7TtE-ETM0VpSd8lE0lntg5Aaz11fLRwnPzDV9IkPiY-_iozomGgWImI-xlI8_XNUq6UUE=s192-rw",
+      icon: "https://play-lh.googleusercontent.com/YpxTvsGH_q-7MEteIa7TtE-ETM0VpSd8lE0lntg5Aaz11fLRwnPzDV9IkPiY-_iozomGgWImI-xlI8_XNUq6UUE=s128-rw",
       link: "https://play.google.com/store/apps/details?id=com.paperboatapps.google.kiddopia",
       repo: "",
     },
@@ -153,7 +153,7 @@ const PORTFOLIO = {
       description:
         "A new game for Kiddopia's Puzzles section. Kids replicate intricate paths to build strategic thinking and problem-solving, with animated hints to guide them.",
       tags: ["Unity 2D", "C#", "Animation"],
-      icon: "https://play-lh.googleusercontent.com/YpxTvsGH_q-7MEteIa7TtE-ETM0VpSd8lE0lntg5Aaz11fLRwnPzDV9IkPiY-_iozomGgWImI-xlI8_XNUq6UUE=s192-rw",
+      icon: "https://play-lh.googleusercontent.com/YpxTvsGH_q-7MEteIa7TtE-ETM0VpSd8lE0lntg5Aaz11fLRwnPzDV9IkPiY-_iozomGgWImI-xlI8_XNUq6UUE=s128-rw",
       link: "https://play.google.com/store/apps/details?id=com.paperboatapps.google.kiddopia",
       repo: "",
     },
@@ -165,7 +165,7 @@ const PORTFOLIO = {
       description:
         "More learning games for Kiddopia: letter tracing to build early literacy, a paint game for creative expression, and Cooking Master, a playful cooking game for toddlers.",
       tags: ["Unity 2D", "C#", "Game Design"],
-      icon: "https://play-lh.googleusercontent.com/YpxTvsGH_q-7MEteIa7TtE-ETM0VpSd8lE0lntg5Aaz11fLRwnPzDV9IkPiY-_iozomGgWImI-xlI8_XNUq6UUE=s192-rw",
+      icon: "https://play-lh.googleusercontent.com/YpxTvsGH_q-7MEteIa7TtE-ETM0VpSd8lE0lntg5Aaz11fLRwnPzDV9IkPiY-_iozomGgWImI-xlI8_XNUq6UUE=s128-rw",
       link: "https://play.google.com/store/apps/details?id=com.paperboatapps.google.kiddopia",
       repo: "",
     },

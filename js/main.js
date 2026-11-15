@@ -71,6 +71,15 @@
     setInterval(() => { h.classList.add("glitching"); setTimeout(() => h.classList.remove("glitching"), 180); }, 3800);
   }, 3000);
 
+  // Run below-the-fold rendering in small chunks when the browser is idle,
+  // so no single long task blocks the page during load (lower TBT).
+  const idle = (fn) => (window.requestIdleCallback ? requestIdleCallback(fn, { timeout: 1200 }) : setTimeout(fn, 1));
+
+  // ---------- Reveal-on-scroll observer ----------
+  const revealIO = new IntersectionObserver((ents) => ents.forEach((en) => {
+    if (en.isIntersecting) { en.target.classList.add("visible"); revealIO.unobserve(en.target); }
+  }), { threshold: 0.1 });
+
   // ---------- Company helpers ----------
   const companies = [];
   d.projects.forEach((p) => { const c = p.company || "Other"; if (!companies.includes(c)) companies.push(c); });
@@ -84,23 +93,23 @@
   const seen = new Set();
   const shipped = d.projects.filter((p) => p.icon && /play\.google/.test(p.link || "") && !seen.has(p.link) && seen.add(p.link));
   const short = (t) => t.split("|")[0].split(":")[0].split("—")[0].trim();
-  const mqItem = (p, dup) => `<a class="mq-item" href="${esc(p.link)}" target="_blank" rel="noopener"${dup ? ' aria-hidden="true" tabindex="-1"' : ""}><img src="${esc(p.icon.replace(/=s[0-9]+(-rw)?$/, "=s96-rw"))}" alt="${dup ? "" : esc(short(p.title) + " game icon on Google Play")}" width="40" height="40" loading="lazy" decoding="async" referrerpolicy="no-referrer" />${esc(short(p.title))}</a>`;
-  $("marquee").innerHTML = shipped.map((p) => mqItem(p, false)).join("") + shipped.map((p) => mqItem(p, true)).join("");
+  const mqItem = (p, dup) => `<a class="mq-item" href="${esc(p.link)}" target="_blank" rel="noopener"${dup ? ' aria-hidden="true" tabindex="-1"' : ""}><img src="${esc(p.icon.replace(/=s[0-9]+(-rw)?$/, "=s72-rw"))}" alt="${dup ? "" : esc(short(p.title) + " game icon on Google Play")}" width="40" height="40" loading="lazy" decoding="async" referrerpolicy="no-referrer" />${esc(short(p.title))}</a>`;
+  idle(() => { $("marquee").innerHTML = shipped.map((p) => mqItem(p, false)).join("") + shipped.map((p) => mqItem(p, true)).join(""); });
 
-  // ---------- Stats ----------
-  const jobCount = d.experience.filter((e) => !isEdu(e) && !/freelance/i.test(e.title)).length;
-  $("stats").innerHTML = [
-    [d.yearsExp || "", "Years XP"],
-    [d.projects.length + "+", "Projects"],
-    [jobCount, "Studios"],
-  ].map(([v, l]) => `<div class="stat"><b>${esc(v)}</b><span>${esc(l)}</span></div>`).join("");
-
-  // ---------- About + skills ----------
-  $("aboutText").innerHTML = d.about.map((p) => `<p>${esc(p)}</p>`).join("");
-  $("skills").innerHTML = Object.entries(d.skills).map(([g, items]) => `
-    <div class="skill-group"><h3>${esc(g)}</h3>
-      <div class="slots">${items.map((s) => `<span class="slot">${esc(s)}</span>`).join("")}</div>
-    </div>`).join("");
+  // ---------- Stats + about + skills ----------
+  idle(() => {
+    const jobCount = d.experience.filter((e) => !isEdu(e) && !/freelance/i.test(e.title)).length;
+    $("stats").innerHTML = [
+      [d.yearsExp || "", "Years XP"],
+      [d.projects.length + "+", "Projects"],
+      [jobCount, "Studios"],
+    ].map(([v, l]) => `<div class="stat"><b>${esc(v)}</b><span>${esc(l)}</span></div>`).join("");
+    $("aboutText").innerHTML = d.about.map((p) => `<p>${esc(p)}</p>`).join("");
+    $("skills").innerHTML = Object.entries(d.skills).map(([g, items]) => `
+      <div class="skill-group"><h3>${esc(g)}</h3>
+        <div class="slots">${items.map((s) => `<span class="slot">${esc(s)}</span>`).join("")}</div>
+      </div>`).join("");
+  });
 
   // ---------- Level select ----------
   let activeTab = "All";
@@ -201,13 +210,12 @@
       c.addEventListener("pointerleave", () => (c.style.transform = ""));
     });
   }
-  renderTabs();
-  renderCards();
+  idle(() => { renderTabs(); renderCards(); });
 
   // ---------- Quest log ----------
   const jobs = d.experience.filter((e) => !isEdu(e));
   let lvl = jobs.length;
-  $("questList").innerHTML = d.experience.map((e, i) => {
+  idle(() => { $("questList").innerHTML = d.experience.map((e, i) => {
     const edu = isEdu(e);
     const badge = edu ? "EDU" : String(lvl--).padStart(2, "0");
     const comp = edu ? null : expCompany(e);
@@ -226,6 +234,8 @@
         </div></div>
       </div>`;
   }).join("");
+    $("questList").querySelectorAll(".reveal").forEach((el) => revealIO.observe(el));
+  });
   $("questList").addEventListener("click", (e) => {
     const g = e.target.closest(".q-games button");
     if (g) { selectTab(g.dataset.tab); $("levels").scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth" }); return; }
@@ -251,9 +261,5 @@
   menuBtn.addEventListener("click", () => { navLinks.classList.toggle("open"); menuBtn.classList.toggle("open"); });
   navLinks.addEventListener("click", (e) => { if (e.target.tagName === "A") { navLinks.classList.remove("open"); menuBtn.classList.remove("open"); } });
 
-  // ---------- Reveal ----------
-  const revealIO = new IntersectionObserver((ents) => ents.forEach((en) => {
-    if (en.isIntersecting) { en.target.classList.add("visible"); revealIO.unobserve(en.target); }
-  }), { threshold: 0.1 });
-  document.querySelectorAll(".reveal").forEach((el) => revealIO.observe(el));
+  document.querySelectorAll(".reveal").forEach((el) => revealIO.observe(el)); // static items; JS-rendered sections observe their own
 })();
