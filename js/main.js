@@ -233,7 +233,7 @@
   const secObs = new IntersectionObserver((ents) => ents.forEach((en) => {
     if (en.isIntersecting) links.forEach((a) => a.classList.toggle("active", a.getAttribute("href") === "#" + en.target.id));
   }), { rootMargin: "-45% 0px -50% 0px" });
-  ["profile", "levels", "quest", "contact"].forEach((id) => secObs.observe($(id)));
+  ["profile", "levels", "arcade", "quest", "contact"].forEach((id) => secObs.observe($(id)));
   const navLinks = $("navLinks"), menuBtn = $("menuBtn");
   menuBtn.addEventListener("click", () => { navLinks.classList.toggle("open"); menuBtn.classList.toggle("open"); });
   navLinks.addEventListener("click", (e) => { if (e.target.tagName === "A") { navLinks.classList.remove("open"); menuBtn.classList.remove("open"); } });

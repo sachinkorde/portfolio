@@ -10,18 +10,18 @@ const PORTFOLIO = {
   roles: ["Unity 3D Developer", "Game Developer", "AR / VR Developer", "Multiplayer Game Dev"],
   yearsExp: "5+",
   tagline:
-    "I build engaging 2D & 3D games, real-time multiplayer card & casino games, AR experiences and interactive simulations with Unity and C#, from toddler learning games to industrial digital twins.",
-  location: "Pune, India",
+    "Unity game developer in Pune, India. I build 2D & 3D mobile games, real-time multiplayer card & casino games, AR/VR apps and interactive simulations with Unity and C#.",
+  location: "Pune, Maharashtra, India",
   email: "sachinkorde1993@gmail.com",
   resumeFile: "assets/Sachin_Korde_Resume.pdf?v=5",
 
   socials: [
     { label: "LinkedIn", url: "https://www.linkedin.com/in/sachinkorde/" },
-    // { label: "GitHub", url: "https://github.com/your-username" },
+    { label: "GitHub", url: "https://github.com/sachinkorde" },
   ],
 
   about: [
-    "I'm a Unity game developer with 5+ years of experience creating engaging 2D and 3D experiences. I work mainly in Unity and C#, with a strong focus on game physics, animation, level design and clean object-oriented code.",
+    "I'm a Unity game developer based in Pune, Maharashtra, with 5+ years of experience creating engaging 2D and 3D experiences. I'm available for full-time roles, freelance projects and remote work. I work mainly in Unity and C#, with a strong focus on game physics, animation, level design and clean object-oriented code.",
     "I've built mixed-reality games and AR apps, educational games that help toddlers with early literacy, Unity-based simulation software for the energy industry, and, as a freelancer, real-time multiplayer Rummy, Bingo, casino and card games. I enjoy working with cross-functional teams — integrating APIs, authentication and reporting — to ship polished products on mobile, web and desktop.",
   ],
 
