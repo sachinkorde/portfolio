@@ -274,7 +274,7 @@ module.exports = [
     company: "Aquila Digital Energy Solutions",
     period: "Feb 2025 – Apr 2026",
     tags: ["Unity 3D", "C#", "Blender", "Real-time Data", "ReactJS"],
-    image: "https://www.aquila-engineer.com/wp-content/uploads/2026/05/auto-line-up-1-scaled.jpeg",
+    image: SITE + "assets/projects/dpt-aquila.webp",
     links: [{ label: "Aquila Digital Pressure Testing", url: "https://www.aquila-engineer.com/digital-pressure-testing/" }],
     body: [
       ["p", "Unity isn't only for games. At **Aquila Digital Energy Solutions** I worked on **Digital Pressure Testing (DPT)**, a Unity-based platform that validates drilling-rig pressure tests in real time against the **API STD 53** standard."],
@@ -310,7 +310,7 @@ module.exports = [
     company: "ImmersiveVision Technology",
     period: "Jul 2024 – Sep 2024",
     tags: ["Unity 3D", "C#", "OOP", "Medical 3D"],
-    image: "https://immersivelabz.com/wp-content/uploads/2024/10/cadaviz.png",
+    image: SITE + "assets/projects/cadaviz.webp",
     links: [{ label: "Cadaviz product page", url: "https://immersivelabz.com/cadaviz/" }],
     body: [
       ["p", "**Cadaviz** is an advanced virtual human dissection table with more than 90 installations, used by medical colleges for interactive 3D anatomy learning. At **ImmersiveVision Technology** I added a new section to its **Male Full Body** module."],

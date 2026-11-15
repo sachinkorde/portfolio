@@ -43,7 +43,7 @@ const PORTFOLIO = {
       description:
         "A Unity-based platform that validates drilling-rig pressure tests in real time against API STD 53. Built exact 3D replicas of client Choke Manifolds, Blowout Preventer (BOP) stacks and MPD equipment from engineering schematics, modeling missing parts in Blender. Tested each configuration against real-time pressure data before release, and added new features including a Casing test workflow and automated PDF reports.",
       tags: ["Unity 3D", "C#", "Blender", "Real-time Data", "ReactJS"],
-      image: "https://www.aquila-engineer.com/wp-content/uploads/2026/05/auto-line-up-1-scaled.jpeg",
+      image: "assets/projects/dpt-aquila.webp",
       link: "https://www.aquila-engineer.com/digital-pressure-testing/",
       linkLabel: "Product page",
       repo: "",
@@ -56,7 +56,7 @@ const PORTFOLIO = {
       description:
         "Cadaviz is an advanced virtual human dissection table used by medical colleges for interactive 3D anatomy learning. Got up to speed on its large existing codebase on my own, then designed and built a new section in the Male Full Body module with a clean, modular class structure, integrating 3D models and medical content from the content team.",
       tags: ["Unity 3D", "C#", "OOP", "3D Integration"],
-      image: "https://immersivelabz.com/wp-content/uploads/2024/10/cadaviz.png",
+      image: "assets/projects/cadaviz.webp",
       link: "https://immersivelabz.com/cadaviz/",
       linkLabel: "Product page",
       repo: "",

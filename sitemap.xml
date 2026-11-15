@@ -9,10 +9,10 @@
       <image:loc>https://sachinkorde.github.io/portfolio/og-image.png</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.aquila-engineer.com/wp-content/uploads/2026/05/auto-line-up-1-scaled.jpeg</image:loc>
+      <image:loc>https://sachinkorde.github.io/portfolio/assets/projects/dpt-aquila.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://immersivelabz.com/wp-content/uploads/2024/10/cadaviz.png</image:loc>
+      <image:loc>https://sachinkorde.github.io/portfolio/assets/projects/cadaviz.webp</image:loc>
     </image:image>
     <image:image>
       <image:loc>https://play-lh.googleusercontent.com/CajKjdg47A8vXsTcdW5kgBCX90SGUQux5InYjiseWUJbhPKjUawjxmH04Ka3_e5FGAGqw4VV-Bei34GbTea0Hg=s192-rw</image:loc>
@@ -123,7 +123,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://www.aquila-engineer.com/wp-content/uploads/2026/05/auto-line-up-1-scaled.jpeg</image:loc>
+      <image:loc>https://sachinkorde.github.io/portfolio/assets/projects/dpt-aquila.webp</image:loc>
     </image:image>
   </url>
   <url>
@@ -132,7 +132,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://immersivelabz.com/wp-content/uploads/2024/10/cadaviz.png</image:loc>
+      <image:loc>https://sachinkorde.github.io/portfolio/assets/projects/cadaviz.webp</image:loc>
     </image:image>
   </url>
   <url>

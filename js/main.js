@@ -5,20 +5,22 @@
   const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const canHover = matchMedia("(hover: hover)").matches;
 
-  // ---------- Loader ----------
-  document.body.classList.add("loading");
-  (function boot() {
-    const msgs = ["Loading assets", "Compiling shaders", "Spawning player", "Ready"];
-    let p = 0;
-    const step = () => {
-      p = Math.min(100, p + 14 + Math.random() * 16);
-      $("loaderFill").style.width = p + "%";
-      $("loaderPct").textContent = Math.round(p) + "%";
-      $("loaderMsg").textContent = msgs[Math.min(msgs.length - 1, Math.floor(p / 34))];
-      if (p < 100) setTimeout(step, reduceMotion ? 15 : 45);
-      else setTimeout(() => { $("loader").classList.add("done"); document.body.classList.remove("loading"); introAnim(); }, 120);
+  // ---------- 3D hero game: load only when the visitor interacts ----------
+  // Keeps the first page load fast (no 3D engine until someone moves, taps or presses a key).
+  (function lazyGame() {
+    const hero = $("hero");
+    let started = false;
+    const start = () => {
+      if (started) return;
+      started = true;
+      events.forEach(([el, ev]) => el.removeEventListener(ev, start));
+      hero.classList.add("game-loading");
+      import("./scene.js?v=5").catch(() => hero.classList.remove("game-loading"));
     };
-    step();
+    const events = [[hero, "pointermove"], [hero, "pointerdown"], [hero, "touchstart"], [window, "keydown"]];
+    events.forEach(([el, ev]) => el.addEventListener(ev, start, { passive: true }));
+    const playBtn = $("heroPlay");
+    if (playBtn) playBtn.addEventListener("click", start);
   })();
 
   // ---------- Basic info ----------
@@ -26,7 +28,6 @@
   $("heroName").textContent = d.name;
   $("heroName").dataset.text = d.name;
   $("heroTagline").textContent = d.tagline;
-  $("loaderLogo").textContent = initials;
   $("avatarInitials").textContent = initials;
   $("profileName").textContent = d.name;
   $("profileRole").textContent = d.role;
@@ -77,7 +78,7 @@
   const seen = new Set();
   const shipped = d.projects.filter((p) => p.icon && /play\.google/.test(p.link || "") && !seen.has(p.link) && seen.add(p.link));
   const short = (t) => t.split("|")[0].split(":")[0].split("—")[0].trim();
-  const mqItem = (p, dup) => `<a class="mq-item" href="${esc(p.link)}" target="_blank" rel="noopener"${dup ? ' aria-hidden="true" tabindex="-1"' : ""}><img src="${esc(p.icon)}" alt="${dup ? "" : esc(short(p.title) + " game icon on Google Play")}" width="40" height="40" loading="lazy" decoding="async" referrerpolicy="no-referrer" />${esc(short(p.title))}</a>`;
+  const mqItem = (p, dup) => `<a class="mq-item" href="${esc(p.link)}" target="_blank" rel="noopener"${dup ? ' aria-hidden="true" tabindex="-1"' : ""}><img src="${esc(p.icon.replace(/=s[0-9]+(-rw)?$/, "=s96-rw"))}" alt="${dup ? "" : esc(short(p.title) + " game icon on Google Play")}" width="40" height="40" loading="lazy" decoding="async" referrerpolicy="no-referrer" />${esc(short(p.title))}</a>`;
   $("marquee").innerHTML = shipped.map((p) => mqItem(p, false)).join("") + shipped.map((p) => mqItem(p, true)).join("");
 
   // ---------- Stats ----------
@@ -137,7 +138,7 @@
     car.innerHTML = list.map(cardHTML).join("");
     car.scrollLeft = 0;
     bindTilt();
-    updateCar();
+    requestAnimationFrame(updateCar); // read layout after the browser has painted (avoids forced reflow)
   }
   function selectTab(t) {
     activeTab = t;
@@ -245,18 +246,4 @@
     if (en.isIntersecting) { en.target.classList.add("visible"); revealIO.unobserve(en.target); }
   }), { threshold: 0.1 });
   document.querySelectorAll(".reveal").forEach((el) => revealIO.observe(el));
-
-  // ---------- Intro + scroll motion (GSAP if loaded) ----------
-  function introAnim() {
-    if (!window.gsap || reduceMotion) return;
-    gsap.from(".hero-content > *", { y: 30, opacity: 0, duration: 0.8, stagger: 0.1, ease: "power3.out" });
-    gsap.from(".hud, .hero-hint", { opacity: 0, duration: 1, delay: 0.5 });
-    if (window.ScrollTrigger) {
-      gsap.registerPlugin(ScrollTrigger);
-      gsap.utils.toArray(".section-head").forEach((el) =>
-        gsap.from(el.children, { scrollTrigger: { trigger: el, start: "top 85%" }, y: 26, opacity: 0, duration: 0.7, stagger: 0.08, ease: "power2.out" })
-      );
-      gsap.to(".hero-content", { scrollTrigger: { trigger: "#hero", start: "top top", end: "bottom top", scrub: true }, y: -120, opacity: 0 });
-    }
-  }
 })();

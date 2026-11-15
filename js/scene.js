@@ -19,7 +19,7 @@ try {
   document.body.classList.add("no-webgl");
   throw e;
 }
-renderer.setPixelRatio(Math.min(devicePixelRatio, 1.75));
+renderer.setPixelRatio(Math.min(devicePixelRatio, innerWidth < 700 ? 1.25 : 1.5));
 renderer.outputColorSpace = THREE.SRGBColorSpace;
 
 const scene = new THREE.Scene();
@@ -40,7 +40,7 @@ rim.position.set(-6, -2, 2);
 scene.add(rim);
 
 // ---------- Starfield (warp) ----------
-const STARS = 1400;
+const STARS = innerWidth < 700 ? 600 : 1100;
 const starGeo = new THREE.BufferGeometry();
 const starPos = new Float32Array(STARS * 3);
 for (let i = 0; i < STARS; i++) {
@@ -262,3 +262,5 @@ function tick() {
 }
 requestAnimationFrame(tick);
 document.body.classList.add("webgl-ready");
+hero.classList.remove("game-loading");
+setTimeout(() => document.querySelector(".hero-poster")?.remove(), 600);
