@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /play/
 
-Sitemap: https://sachinkorde.github.io/portfolio/sitemap.xml
+Sitemap: https://www.sachinkorde.online/sitemap.xml

@@ -8,7 +8,7 @@ const fs = require("fs");
 const path = require("path");
 
 const ROOT = path.join(__dirname, "..");
-const SITE = "https://sachinkorde.github.io/portfolio/";
+const SITE = "https://www.sachinkorde.online/";
 const BLOG = SITE + "blog/";
 const DATE = "2026-11-15";
 const AUTHOR = { name: "Sachin Korde", url: SITE, linkedin: "https://www.linkedin.com/in/sachinkorde/" };

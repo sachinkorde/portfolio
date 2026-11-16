@@ -7,7 +7,7 @@
 
 const PLAY = (id) => `https://play.google.com/store/apps/details?id=${id}`;
 
-const SITE = "https://sachinkorde.github.io/portfolio/";
+const SITE = "https://www.sachinkorde.online/";
 
 module.exports = [
   // ---------------- PUNE LANDING / GUIDE PAGES ----------------
@@ -405,7 +405,7 @@ module.exports = [
     company: "Freelance & client projects",
     period: "",
     tags: ["Multiplayer", "Sockets", "Unity", "C#", "Real-time"],
-    image: "https://sachinkorde.github.io/portfolio/og-image.png",
+    image: "https://www.sachinkorde.online/og-image.png",
     links: [],
     body: [
       ["p", "Real-time multiplayer games are some of the most demanding projects a game developer can take on. Every player must see the same game state at the same moment, and every result has to be trusted. I've built real-time card and casino-style games for clients: **multiplayer Rummy** and card games, a live **Bingo** number game, and a suite of casino games."],
@@ -421,7 +421,7 @@ module.exports = [
         "**Trust.** For card and number games, players must believe results are fair, so transparency and correct logic matter as much as visuals.",
       ]],
       ["h2", "Available for these projects"],
-      ["p", "If you're planning a Rummy, card, board or casino-style multiplayer game, I'm available for **freelance and full-time** work, in Pune or remote. [Get in touch](https://sachinkorde.github.io/portfolio/#contact)."],
+      ["p", "If you're planning a Rummy, card, board or casino-style multiplayer game, I'm available for **freelance and full-time** work, in Pune or remote. [Get in touch](https://www.sachinkorde.online/#contact)."],
       ["h2", "Tech stack"],
       ["p", "Unity, C#, socket programming, real-time multiplayer, server-synced game state."],
     ],
@@ -436,8 +436,8 @@ module.exports = [
     company: "Sachin Korde",
     period: "",
     tags: ["Hire", "Unity", "Pune", "Freelance", "Full-time"],
-    image: "https://sachinkorde.github.io/portfolio/og-image.png",
-    links: [{ label: "Download my resume", url: "https://sachinkorde.github.io/portfolio/assets/Sachin_Korde_Resume.pdf" }],
+    image: "https://www.sachinkorde.online/og-image.png",
+    links: [{ label: "Download my resume", url: "https://www.sachinkorde.online/assets/Sachin_Korde_Resume.pdf" }],
     body: [
       ["p", "Hi, I'm **Sachin Korde**, a **Unity game developer based in Pune, Maharashtra**, with **5+ years** of experience shipping 2D and 3D mobile games, AR/VR apps and real-time 3D software. If you're a studio, a startup or a business that needs a game built, here's a quick, honest overview of what I can do for you."],
       ["h2", "Games and apps I've worked on"],
@@ -464,7 +464,7 @@ module.exports = [
         "**Freelance**: mobile games, card and casino games, kids learning games, AR/VR apps.",
         "**Contract**: feature work, optimization, polish and bug fixing on existing Unity projects.",
       ]],
-      ["p", "Email me at [sachinkorde1993@gmail.com](mailto:sachinkorde1993@gmail.com) or connect on [LinkedIn](https://www.linkedin.com/in/sachinkorde/). You can also see everything on my [portfolio](https://sachinkorde.github.io/portfolio/)."],
+      ["p", "Email me at [sachinkorde1993@gmail.com](mailto:sachinkorde1993@gmail.com) or connect on [LinkedIn](https://www.linkedin.com/in/sachinkorde/). You can also see everything on my [portfolio](https://www.sachinkorde.online/)."],
     ],
   },
 ];
