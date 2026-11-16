@@ -1,6 +1,12 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "trailingSlash": false,
+  "redirects": [
+    { "source": "/play/block-puzzle", "destination": "https://play.google.com/store/apps/details?id=studio.gamefusion.blockpuzzle&referrer=utm_source%3Dsachinkorde.online%26utm_medium%3Dshortlink%26utm_campaign%3Dblock-puzzle", "permanent": false },
+    { "source": "/play/sweet-swirl-saga", "destination": "https://play.google.com/store/apps/details?id=studio.gamefusionstudio.sweetswirlsaga&referrer=utm_source%3Dsachinkorde.online%26utm_medium%3Dshortlink%26utm_campaign%3Dsweet-swirl-saga", "permanent": false },
+    { "source": "/play/screw-puzzle", "destination": "https://play.google.com/store/apps/details?id=studio.gamefusion.screwpuzzle&referrer=utm_source%3Dsachinkorde.online%26utm_medium%3Dshortlink%26utm_campaign%3Dscrew-puzzle", "permanent": false },
+    { "source": "/play", "destination": "/games/", "permanent": false }
+  ],
   "headers": [
     {
       "source": "/assets/fonts/(.*)",

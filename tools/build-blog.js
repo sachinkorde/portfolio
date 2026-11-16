@@ -67,7 +67,7 @@ function head({ title, description, keywords, url, image, type, jsonld, extra = 
   <meta name="twitter:image" content="${image}" />${extra}
   <link rel="preload" href="../assets/fonts/chakra-petch-700.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="../assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="../css/blog.css?v=5" />
+  <link rel="stylesheet" href="../css/blog.css?v=6" />
   <script type="application/ld+json">${JSON.stringify(jsonld)}</script>
 </head>`;
 }
@@ -89,7 +89,7 @@ const footer = `
   <footer class="b-foot">
     <div class="b-wrap">
       <p><strong>Sachin Korde</strong> · Unity Game Developer in Pune, Maharashtra, India · Available for full-time &amp; freelance work</p>
-      <p><a href="${SITE}">Portfolio</a> · <a href="./">Blog</a> · <a href="${SITE}#arcade">Play 10 mini-games</a> · <a href="${AUTHOR.linkedin}" target="_blank" rel="noopener">LinkedIn</a> · <a href="mailto:sachinkorde1993@gmail.com">Email</a></p>
+      <p><a href="${SITE}">Portfolio</a> · <a href="${BLOG}">Blog</a> · <a href="${SITE}games/">Games</a> · <a href="${SITE}#arcade">Play 10 mini-games</a> · <a href="${AUTHOR.linkedin}" target="_blank" rel="noopener">LinkedIn</a> · <a href="mailto:sachinkorde1993@gmail.com">Email</a></p>
     </div>
   </footer>`;
 
@@ -277,9 +277,13 @@ const projImg = (p) => (p.image || p.icon ? { src: abs(p.image || p.icon), alt: 
 const imgTag = (im) => `\n    <image:image>\n      <image:loc>${esc(im.src)}</image:loc>\n    </image:image>`;
 const seenImg = new Set();
 const homeImgs = [{ src: SITE + "og-image.png" }, ...projects.map(projImg).filter(Boolean)].filter((im) => !seenImg.has(im.src) && seenImg.add(im.src));
+// ---------- Game landing pages ----------
+const gamesOut = require("./build-games.js")({ ROOT, SITE, DATE, esc, inline, plain, head, nav, footer, personRef });
+
 const urls = [
   { loc: SITE, pr: "1.0", imgs: homeImgs },
   { loc: BLOG, pr: "0.9", imgs: [] },
+  ...gamesOut.urls,
   ...posts.map((p) => ({ loc: BLOG + p.slug + ".html", pr: "0.8", imgs: [imgOf(p)] })),
   { loc: SITE + "assets/Sachin_Korde_Resume.pdf", pr: "0.6", imgs: [] },
 ];
@@ -336,4 +340,4 @@ swap("<!-- PROJECTS-LD:START -->", "<!-- PROJECTS-LD:END -->", `\n  <script type
 swap("<!-- PROJECTS-NOSCRIPT:START -->", "<!-- PROJECTS-NOSCRIPT:END -->", `\n        ${noscript}\n        `);
 fs.writeFileSync(indexPath, home);
 
-console.log(`Built ${posts.length} posts + blog index + sitemap (${urls.length} URLs).`);
+console.log(`Built ${posts.length} posts + ${gamesOut.games.length} game pages + blog index + sitemap (${urls.length} URLs).`);
